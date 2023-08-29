@@ -1,0 +1,104 @@
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: var(--bs-navbar-active-color);
+  background-color: red;
+}
+
+.sectionBorder {
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  /* border-radius: var(--border-radius); */
+  /* background-color: rgba(var(--callout-rgb), 0.5); */
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.hexGridHolder svg g {
+  fill: #48d71c;
+  fill-opacity: 0.6;
+}
+.hexGridHolder svg g:hover {
+  fill-opacity: 1;
+}
+/* .hexGridHolder svg g:hover text {
+  fill-opacity: 1;
+} */
+
+.hexGridHolder svg g polygon {
+  stroke: #48d71c;
+  stroke-width: 0.2;
+  transition: fill-opacity 0.2s;
+}
+.hexGridHolder svg g text {
+  font-size: 0.2em;
+  fill: black;
+  fill-opacity: 1;
+  transition: fill-opacity 0.2s;
+}
+.hexGridHolder svg path {
+  fill: none;
+  stroke: hsl(60, 20%, 70%);
+  stroke-width: 0.4em;
+  stroke-opacity: 0.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+Text {
+  font-size: 0.22em;
+  fill: white;
+  fill-opacity: 0.7;
+  transition: fill-opacity 0.5s;
+}
+
+.RED g {
+  fill: red !important;
+}
+
+.GREEN g {
+  fill: green !important;
+}
+
+.AMBER g {
+  fill: orange !important;
+}
+
+/* Font size of elements inside <table> to 1em */
+table {
+  font-size: 0.7rem;
+}
+
+.portfolioHeader {
+  background-color: #4287f5;
+  color: white;
+  text-align: center;
+  border: 1px solid;
+  margin-bottom: 1rem;
+}
+
+.portfolioItem {
+  color: white;
+  text-align: center;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  border: 1px solid black;
+  margin-left: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.portfolioRed {
+  /* background-color: red; */
+  /* opacity: 0.7; */
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.portfolioGreen {
+  background-color: rgba(126, 165, 47, 0.7);
+}
+
+.appViewRed {
+  background-color: rgba(255, 0, 0, 0.7) !important;
+}
+
+.appViewGreen {
+  background-color: rgba(126, 165, 47, 0.7) !important;
+}
