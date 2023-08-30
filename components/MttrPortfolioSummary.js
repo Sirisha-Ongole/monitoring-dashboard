@@ -2,7 +2,7 @@ import React from "react";
 
 import { Table } from "react-bootstrap";
 
-export const PortfolioSummary = ({ data }) => {
+export const MttrPortfolioSummary = ({ data }) => {
   return (
     <div className="sectionBorder">
       <div className="row">
@@ -26,9 +26,7 @@ export const PortfolioSummary = ({ data }) => {
             <thead>
               <tr>
                 <td>Metal Tier</td>
-                <td>Total App count</td>
-                <td>No of App compliance</td>
-                <td>% of App compliance</td>
+                <td>MTTR</td>
               </tr>
             </thead>
             <tbody>
@@ -50,9 +48,7 @@ export const PortfolioSummary = ({ data }) => {
                     }
                   >
                     <td>{item.criticality}</td>
-                    <td>{item.danger}</td>
-                    <td>{item.amber}</td>
-                    <td>{item.healthy}</td>
+                    <td>{item.mttr}</td>
                   </tr>
                 );
               })}

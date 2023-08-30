@@ -1,52 +1,80 @@
 "use client";
-import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import React, { useEffect } from "react";
+import { Container } from "react-bootstrap";
 
 import { Header } from "./Header";
-import { LobOverview } from "./LobOverview";
-import { HexaGridHolder } from "./HexGrid";
-import { ongoingIssues, rfbData } from "../config/hexa-grid";
-import { PortfolioView } from "./PortfolioView";
-import { PortfolioSummary } from "./PortfolioSummary";
-import { portfolioSummary, portfolioView } from "../config/portfolio";
-import { ApplicationView } from "./ApplicationView";
+import { OngoingIssueView } from "./OngoingIssueView";
+import { SideSectionHolder } from "./sections/SideSectionHolder";
+import { HexaGridsSection } from "./sections/HexaGridsSection";
+import { RfbSection } from "./sections/RfbSection";
+import { HygieneSection } from "./sections/HygieneSection";
+import { MttrSection } from "./sections/MttrSection";
 
 export const MainContainer = () => {
-  const [isVisible, setIsVisible] = React.useState(true);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const [showRfbView, setShowRfbView] = React.useState(false);
+  const [showIssueView, setShowIssueView] = React.useState(false);
+  const [showHygieneView, setShowHygieneView] = React.useState(false);
+  const [showMttrView, setShowMttrView] = React.useState(false);
+
+  const [rfbRegionSelected, updateRfbRegionSelected] = React.useState(null);
+
+  useEffect(() => {
+    if (showRfbView) {
+      setShowIssueView(false);
+      setShowHygieneView(false);
+      setShowMttrView(false);
+    }
+    if (showIssueView) {
+      setShowRfbView(false);
+      setShowHygieneView(false);
+      setShowMttrView(false);
+    }
+    if (showHygieneView) {
+      setShowRfbView(false);
+      setShowIssueView(false);
+      setShowMttrView(false);
+    }
+    if (showMttrView) {
+      setShowRfbView(false);
+      setShowIssueView(false);
+      setShowHygieneView(false);
+    }
+  }, [showRfbView, showIssueView, showHygieneView, showMttrView]);
 
   return (
-    <Container>
+    <Container fluid>
       <Header setIsVisible={setIsVisible} />
-      {/* if isVisible is true then render the following */}
-      {isVisible && (
-        <>
-          <div className="row">
-            <div className="col-4">
-              <LobOverview />
-            </div>
-
-            <div className="col-4">
-              <HexaGridHolder gridData={rfbData} />
-            </div>
-            <div className="col-4">
-              <HexaGridHolder gridData={ongoingIssues} />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-6">
-              <PortfolioView data={portfolioView}/>
-            </div>
-            <div className="col-6">
-              <PortfolioSummary data={portfolioSummary}/>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <ApplicationView />
-            </div>
-          </div>
-        </>
-      )}
+      <div className="row">
+        <div className="col-12">
+          {isVisible && (
+            <>
+              <div className="row">
+                <HexaGridsSection
+                  setShowRfbView={setShowRfbView}
+                  setShowIssueView={setShowIssueView}
+                  setShowHygieneView={setShowHygieneView}
+                  setShowMttrView={setShowMttrView}
+                  updateRfbRegionSelected={updateRfbRegionSelected}
+                />
+              </div>
+              <div className="row">
+                <div className="col-3">
+                  <SideSectionHolder />
+                </div>
+                <div className="col-9">
+                  {showRfbView && (
+                    <RfbSection rfbRegionSelected={rfbRegionSelected} />
+                  )}
+                  {showHygieneView && <HygieneSection />}
+                  {showIssueView && <OngoingIssueView />}
+                  {showMttrView && <MttrSection />}
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
     </Container>
   );
 };

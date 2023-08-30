@@ -1,38 +1,14 @@
 "use client";
 import React from "react";
 import { Table } from "react-bootstrap";
-import {
-  BubbleChart,
-  FunnelChart,
-  PieChart,
-  PieArcSeries,
-  PieArcLabel,
-} from "reaviz";
 
 export const LobOverview = () => {
-  const applicationData = [
-    { key: "Standalone", data: 800 },
-    { key: "Shared", data: 400 },
-    { key: "Total", data: 1200 },
-  ];
-  const serverData = [
-    { key: "GI Servers: 4000", data: 4000 },
-    { key: "Windows Servers", data: 600 },
-    { key: "Linux Servers", data: 2500 },
-    { key: "Solaris Servers", data: 900 },
-  ];
-
-  const tableData = [
-    { data: applicationData, title: "GI Applications" },
-    { data: serverData, title: "GI Servers" },
-  ];
   return (
     <div className="sectionBorder">
       {tableData.map((item, index) => (
         <div className="row" key={index}>
           <div className="col">
-            <Table striped bordered hover
-            >
+            <Table striped bordered hover>
               <thead>
                 <tr>
                   <th
@@ -46,8 +22,9 @@ export const LobOverview = () => {
                   </th>
                 </tr>
                 <tr>
-                  <th>Application</th>
-                  <th>Count</th>
+                  {item.cols.map((col) => (
+                    <th key={col}>{col}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
@@ -65,3 +42,27 @@ export const LobOverview = () => {
     </div>
   );
 };
+
+const applicationData = [
+  { key: "NAM", data: 600 },
+  { key: "LATAM", data: 100 },
+  { key: "Japan", data: 200 },
+  { key: "EMEA", data: 200 },
+  { key: "China", data: 100 },
+  { key: "Total", data: 1200 },
+];
+const serverData = [
+  { key: "GI Servers", data: 4000 },
+  { key: "Windows Servers", data: 600 },
+  { key: "Linux Servers", data: 2500 },
+  { key: "Solaris Servers", data: 900 },
+];
+
+const tableData = [
+  {
+    data: applicationData,
+    title: "GI Applications Landscape",
+    cols: ["Region", "Count"],
+  },
+  // { data: serverData, title: "GI Servers", cols:["Application", "Count"] },
+];

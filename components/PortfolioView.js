@@ -1,11 +1,11 @@
 import React from "react";
 
-export const PortfolioView = ({ data }) => {
+export const PortfolioView = ({ data = [], setShowRfbPortfolioView }) => {
   return (
     <div className="sectionBorder">
       <div className="row">
         <div className="col portfolioHeader">
-          <p>Portfolio View</p>
+          <p>Portfolios</p>
         </div>
       </div>
       <div className="row">
@@ -13,10 +13,16 @@ export const PortfolioView = ({ data }) => {
         {data.map((item) => {
           return (
             <div
-              className={"col-5 portfolioItem " + item.status}
+              className="col-6"
               key={item.name}
+              style={{
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                if (item.clickable) setShowRfbPortfolioView(true);
+              }}
             >
-              <p>{item.name}</p>
+              <p className={"portfolioItem " + item.status}>{item.name}</p>
             </div>
           );
         })}
