@@ -9,6 +9,7 @@ import { HexaGridsSection } from "./sections/HexaGridsSection";
 import { RfbSection } from "./sections/RfbSection";
 import { HygieneSection } from "./sections/HygieneSection";
 import { MttrSection } from "./sections/MttrSection";
+import { InfraSection } from "./sections/InfraSection";
 
 export const MainContainer = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -16,6 +17,7 @@ export const MainContainer = () => {
   const [showIssueView, setShowIssueView] = React.useState(false);
   const [showHygieneView, setShowHygieneView] = React.useState(false);
   const [showMttrView, setShowMttrView] = React.useState(false);
+  const [showInfraView, setShowInfraView] = React.useState(false);
 
   const [rfbRegionSelected, updateRfbRegionSelected] = React.useState(null);
 
@@ -24,23 +26,33 @@ export const MainContainer = () => {
       setShowIssueView(false);
       setShowHygieneView(false);
       setShowMttrView(false);
+      setShowInfraView(false);
     }
     if (showIssueView) {
       setShowRfbView(false);
       setShowHygieneView(false);
       setShowMttrView(false);
+      setShowInfraView(false);
     }
     if (showHygieneView) {
       setShowRfbView(false);
       setShowIssueView(false);
       setShowMttrView(false);
+      setShowInfraView(false);
     }
     if (showMttrView) {
       setShowRfbView(false);
       setShowIssueView(false);
       setShowHygieneView(false);
+      setShowInfraView(false);
     }
-  }, [showRfbView, showIssueView, showHygieneView, showMttrView]);
+    if (showInfraView) {
+      setShowRfbView(false);
+      setShowIssueView(false);
+      setShowHygieneView(false);
+      setShowMttrView(false);
+    }
+  }, [showRfbView, showIssueView, showHygieneView, showMttrView, showInfraView]);
 
   return (
     <Container fluid>
@@ -55,6 +67,7 @@ export const MainContainer = () => {
                   setShowIssueView={setShowIssueView}
                   setShowHygieneView={setShowHygieneView}
                   setShowMttrView={setShowMttrView}
+                  setShowInfraView={setShowInfraView}
                   updateRfbRegionSelected={updateRfbRegionSelected}
                 />
               </div>
@@ -66,6 +79,7 @@ export const MainContainer = () => {
                   {showRfbView && (
                     <RfbSection rfbRegionSelected={rfbRegionSelected} />
                   )}
+                  {showInfraView && <InfraSection />}
                   {showHygieneView && <HygieneSection />}
                   {showIssueView && <OngoingIssueView />}
                   {showMttrView && <MttrSection />}

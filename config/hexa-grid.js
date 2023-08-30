@@ -61,6 +61,69 @@ export const rfbData = {
   ],
 };
 
+export const infraData = {
+  title: "Infra Health Checks",
+  data: [
+    {
+      name: "NAM",
+      status: "GREEN",
+      position: {
+        q: -1,
+        r: 0,
+        s: 1,
+      },
+      clickable: true,
+    },
+    {
+      name: "LATAM",
+      status: "GREEN",
+      position: {
+        q: 0,
+        r: -1,
+        s: 1,
+      },
+      clickable: true,
+    },
+    {
+      name: "JAPAN",
+      status: "AMBER",
+      position: {
+        q: 1,
+        r: -1,
+        s: 0,
+      },
+    },
+    {
+      name: "GERMANY",
+      status: "GREEN",
+      position: {
+        q: 1,
+        r: 0,
+        s: -1,
+      },
+    },
+    {
+      name: "APAC",
+      status: "AMBER",
+      position: {
+        q: -1,
+        r: 1,
+        s: 0,
+      },
+      clickable: true,
+    },
+    {
+      name: "EMEA",
+      status: "GREEN",
+      position: {
+        q: 0,
+        r: 1,
+        s: -1,
+      },
+    },
+  ],
+};
+
 export const ongoingIssues = {
   title: "P1/P2 Issues",
   data: [

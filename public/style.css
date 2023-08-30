@@ -189,3 +189,43 @@ table {
   clear: both;
   /* center */
 }
+
+.dottedLine {
+  border-bottom: 1px dashed grey;
+  padding-left: 0px;
+}
+
+.statBoxOutline {
+  border: 1px solid grey;
+  padding: 0.2rem;
+  margin-top: 0.4rem !important;
+  background-color: lightgrey;
+}
+.statBoxTitle {
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+}
+
+.statBoxIssue{
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: red;
+}
+
+.statBoxIssue:hover{
+  cursor: pointer;
+  color: darkred;
+}
+
+.statBoxTotal {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.statBoxIssueTitle{
+  font-size: 1rem;
+  /* font-weight: bold; */
+  text-align: right;
+  /* color: red; */
+}

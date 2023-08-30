@@ -1,6 +1,6 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-import { Chart } from "./Chart";
+import { BarChart } from "./charts/BarChart";
 
 export const SideSection = () => {
   return (
@@ -13,7 +13,7 @@ export const SideSection = () => {
     >
       <div className="row">
         <div className="col-12">
-          <Chart />
+          <BarChart />
         </div>
       </div>
       <h4
