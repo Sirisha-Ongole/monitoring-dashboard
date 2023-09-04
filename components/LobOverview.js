@@ -1,9 +1,24 @@
 "use client";
 import React from "react";
 import { DataTable } from "./common/DataTable";
+import { PieChart } from "./charts/PieChart";
 
 export const LobOverview = () => {
-  return <DataTable tableData={tableData} />;
+  return (
+    <div className="sectionBorder" style={{ marginTop: "1rem" }}>
+      {/* <DataTable tableData={tableData} /> */}
+      <p
+        style={{
+          textAlign: "center",
+          fontWeight: "bold",
+        }}
+      >GI Applications Landscape</p>
+      <PieChart
+        series={[600, 100, 200, 200, 100]}
+        cols={["NAM", "LATAM", "Japan", "EMEA", "China"]}
+      />
+    </div>
+  );
 };
 
 const rowData = [

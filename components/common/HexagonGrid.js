@@ -2,12 +2,25 @@ import React from "react";
 
 import { HexGrid, Layout, Hexagon, Text } from "react-hexgrid";
 
-export const HexaGridHolder = ({ gridData, setShowView, updateSelected }) => {
+export const HexagonGrid = ({ gridData, setShowView, updateSelected }) => {
   return (
-    <div className="hexGridHolder sectionBorder">
-      <h3>{gridData.title}</h3>
-      <HexGrid width={240} height={250}>
-        <Layout size={{ x: 15, y: 15 }} spacing={1.1}>
+    <div
+      className="hexGridHolder"
+      style={{
+        border: "1px solid rgba(var(--callout-border-rgb), 0.3)",
+        textAlign: "center",
+        marginTop: "0.5rem",
+      }}
+    >
+      <h5
+        style={{
+          paddingTop: "0.5rem",
+        }}
+      >
+        {gridData.title}
+      </h5>
+      <HexGrid width={250} height={250} viewBox="-30 -50 100 100">
+        <Layout size={{ x: 10, y: 10 }} spacing={1.1}>
           <Hexagon q={0} r={0} s={0}>
             <Text>{gridData.title}</Text>
           </Hexagon>

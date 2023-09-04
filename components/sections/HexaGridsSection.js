@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { HexaGridHolder } from "../HexGrid";
+import { HexagonGrid } from "../common/HexagonGrid";
 import {
   appHygene,
   mttr,
@@ -44,33 +44,34 @@ export const HexaGridsSection = ({
 
   return (
     <>
-      <div className="row">
-        <div className="col-4">
-          <HexaGridHolder
+      <div
+        className="row"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <div className="col-2">
+          <HexagonGrid
             gridData={rfbDataState}
             setShowView={setShowRfbView}
             updateSelected={updateRfbRegionSelected}
           />
         </div>
-        <div className="col-4">
-          <HexaGridHolder gridData={infraData} setShowView={setShowInfraView} />
+        <div className="col-2">
+          <HexagonGrid gridData={infraData} setShowView={setShowInfraView} />
         </div>
-        <div className="col-4">
-          <HexaGridHolder
+        <div className="col-2">
+          <HexagonGrid
             gridData={ongoingIssues}
             setShowView={setShowIssueView}
           />
         </div>
-      </div>
-      <div className="row">
-        <div className="col-4">
-          <HexaGridHolder
-            gridData={appHygene}
-            setShowView={setShowHygieneView}
-          />
+        <div className="col-2">
+          <HexagonGrid gridData={appHygene} setShowView={setShowHygieneView} />
         </div>
-        <div className="col-4">
-          <HexaGridHolder gridData={mttr} setShowView={setShowMttrView} />
+        <div className="col-2">
+          <HexagonGrid gridData={mttr} setShowView={setShowMttrView} />
         </div>
       </div>
     </>

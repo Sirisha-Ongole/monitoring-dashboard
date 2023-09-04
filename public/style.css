@@ -45,12 +45,6 @@
   stroke-linejoin: round;
 }
 
-Text {
-  font-size: 0.22em;
-  fill: white;
-  fill-opacity: 0.7;
-  transition: fill-opacity 0.5s;
-}
 
 .RED g {
   fill: red !important;

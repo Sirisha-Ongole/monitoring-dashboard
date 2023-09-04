@@ -2,52 +2,51 @@ import dynamic from "next/dynamic";
 
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-export const BarChart = () => (
-  <>
-    <p
-      style={{
-        textAlign: "center",
-        fontWeight: "bold",
-      }}
-    >
-      Active Tickets by Business functions
-    </p>
+export const BarChart = ({ data, title }) => {
+  const series = [{ data }];
+  return (
+    <>
+      <p
+        style={{
+          textAlign: "center",
+          fontWeight: "bold",
+        }}
+      >
+        {title}
+      </p>
 
-    <ApexChart options={optionsApexBar} series={series} type="bar" />
-  </>
-);
+      <ApexChart
+        options={options}
+        series={series}
+        type="bar"
+        width={200}
+        height={300}
+        colors={colors}
+      />
+    </>
+  );
+};
 
 //Rainbow colors
 const colors = [
   "#FF0000",
   "#FF7F00",
-  "#FFFF00",
-  "#00FF00",
+  "#FFBF00",
+  "#008000",
   "#0000FF",
   "#4B0082",
   "#8F00FF",
 ];
 
-const series = [
-  {
-    name: "Active Tickets",
-    data: [100, 150, 200, 100, 50, 80],
+const options = {
+  labels: ["Reservation", "Rating", "Quote", "Bind", "Book", "Issue"],
+  legend: {
+    position: "bottom",
   },
-];
-
-const optionsApexBar = {
-  options: {
-    chart: {
-      height: 350,
-      type: "bar",
-    },
-    xaxis: {
-      categories: ["Reservation", "Rating", "Quote", "Bind", "Book", "Issue"],
-    },
-    yaxis: {
-      axisBorder: {
-        show: true,
-      },
+  plotOptions: {
+    bar: {
+      distributed: true,
     },
   },
+  colors: colors,
 };

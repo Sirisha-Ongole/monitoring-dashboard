@@ -1,6 +1,7 @@
 import React from "react";
 import { BarChart } from "./charts/BarChart";
-import { DataTable } from "./common/DataTable";
+import { PieChart } from "./charts/PieChart";
+import { BusinessKpi } from "./BusinessKpi";
 
 export const SideSection = () => {
   // const discrepanciesCols = ["Premium", "Reinsurance Premium", "Commission"];
@@ -11,68 +12,22 @@ export const SideSection = () => {
   ];
 
   return (
-    <div
-      className="sectionBorder"
-      style={{
-        marginTop: "1rem",
-        fontSize: "0.8rem",
-      }}
-    >
-      <div className="row">
-        <div className="col-12">
-          <BarChart />
-        </div>
-      </div>
-      <h4
+    <>
+      <div
+        className="sectionBorder"
         style={{
-          textAlign: "center",
-          fontWeight: "bold",
+          marginTop: "1rem",
+          fontSize: "0.8rem",
         }}
       >
-        Business KPI
-      </h4>
-
-      <DataTable
-        tableData={{
-          // cols: discrepanciesCols,
-          rowData: discrepanciesData,
-          title: "Discrepancies Bound vs Booked",
-          styles: {
-            table: {
-              width: "90px",
-              textAlign: "center",
-            },
-          },
-        }}
-        size="sm"
-      />
-
-      <div className="row">
-        <div className="col-8">
-          <p
-            style={{
-              fontWeight: "bold",
-            }}
-          >
-            {" "}
-            Issues vs Delivered
-          </p>
+        <div className="row">
+          <div className="col-12">
+            <BarChart data={[100, 150, 200, 100, 50, 80]} title="Active Tickets by Business functions"/>
+          </div>
         </div>
-        <div className="col-4">- 0.25%</div>
       </div>
-      <div className="row">
-        <div className="col-8">
-          <p
-            style={{
-              fontWeight: "bold",
-            }}
-          >
-            Issues vs Booked
-          </p>
-        </div>
-        <div className="col-4">- 5%</div>
-      </div>
-    </div>
+      <BusinessKpi discrepanciesData={discrepanciesData} />
+    </>
   );
 };
 
