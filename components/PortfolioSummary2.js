@@ -1,8 +1,15 @@
 import React from "react";
 
-import { Table } from "react-bootstrap";
+import { DataTable } from "./common/DataTable";
 
 export const PortfolioSummary2 = ({ data }) => {
+  const size = "sm";
+  const styles = {
+    table: {
+      marginBottom: "0.5rem",
+    },
+  };
+
   return (
     <>
       {
@@ -13,28 +20,16 @@ export const PortfolioSummary2 = ({ data }) => {
             </div>
           </div>
           <div className="row">
-            {/* <p>Application Count : 200</p> */}
             {
-              <Table
-                striped
-                bordered
-                hover
-                size="sm"
-                style={{
-                  marginBottom: "0.5rem",
+              <DataTable
+                tableData={{
+                  cols: data.cols,
+                  rowData: data.rowData,
                 }}
-              >
-                <tbody>
-                  {data.data.map((item) => {
-                    return (
-                      <tr key={item.name}>
-                        <td>{item.name}</td>
-                        <td>{item.value}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </Table>
+                size={size}
+                styles={styles}
+                needsectionBorder={false}
+              />
             }
           </div>
         </div>

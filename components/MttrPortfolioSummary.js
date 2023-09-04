@@ -1,8 +1,24 @@
 import React from "react";
 
-import { Table } from "react-bootstrap";
+import { DataTable } from "./common/DataTable";
 
 export const MttrPortfolioSummary = ({ data }) => {
+  const tableStyle = {
+    marginBottom: "0.5rem",
+    textAlign: "center",
+  };
+  const size = "sm";
+
+  const tableClass = ["metricAndIncident"];
+
+  const cols = ["Metal Tier", "MTTR"];
+  const title = "Application Count : 100";
+
+  const rowClick = () => {
+    // show alert
+    // navigate to state-of-union page in another tab
+    window.open("state.html", "_blank", "noopener noreferrer");
+  };
   return (
     <div className="sectionBorder">
       <div className="row">
@@ -11,49 +27,13 @@ export const MttrPortfolioSummary = ({ data }) => {
         </div>
       </div>
       <div className="row">
-        <p>Application Count : 100</p>
         {
-          <Table
-            striped
-            hover
-            size="sm"
-            className="metricAndIncident"
-            style={{
-              marginBottom: "0.5rem",
-              textAlign: "center",
-            }}
-          >
-            <thead>
-              <tr>
-                <td>Metal Tier</td>
-                <td>MTTR</td>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((item) => {
-                return (
-                  <tr
-                    key={item.criticality}
-                    onClick={
-                      // show alert
-                      () => {
-                        //navigate to state-of-union page in another tab
-                        window.open(
-                          "state.html",
-                          "_blank",
-                          "noopener noreferrer"
-                        );
-
-                      }
-                    }
-                  >
-                    <td>{item.criticality}</td>
-                    <td>{item.mttr}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </Table>
+          <DataTable
+            tableData={{ cols, title, rowData: data }}
+            size={size}
+            classes={{ table: tableClass }}
+            onClicks={{ rowClick }}
+          />
         }
       </div>
     </div>

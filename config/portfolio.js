@@ -116,19 +116,26 @@ export const hygienePortfolioView = [
     status: "portfolioGreen",
   },
 ];
+// export const portfolioSummary = [
+//   { criticality: "Platinum", danger: 20, amber: 15, healthy: 85 },
+//   { criticality: "Gold", danger: 30, amber: 20, healthy: 40 },
+//   { criticality: "Silver", danger: 20, amber: 15, healthy: 50 },
+//   { criticality: "Bronze", danger: 30, amber: 20, healthy: 50 },
+// ];
+
 export const portfolioSummary = [
-  { criticality: "Platinum", danger: 20, amber: 15, healthy: 85 },
-  { criticality: "Gold", danger: 30, amber: 20, healthy: 40 },
-  { criticality: "Silver", danger: 20, amber: 15, healthy: 50 },
-  { criticality: "Bronze", danger: 30, amber: 20, healthy: 50 },
-];
-export const mttrportfolioSummary = [
-  { criticality: "Platinum", mttr: '98 hrs' },
-  { criticality: "Gold", mttr: '110 hrs' },
-  { criticality: "Silver", mttr: '105 hrs' },
-  { criticality: "Bronze", mttr: '101 hrs' },
+  ["Platinum", "20", "15", "85"],
+  ["Gold", "30", "20", "40"],
+  ["Silver", "20", "15", "50"],
+  ["Bronze", "30", "20", "50"],
 ];
 
+export const mttrportfolioSummary = [
+  ["Platinum", "98 hrs"],
+  ["Gold", "110 hrs"],
+  ["Silver", "105 hrs"],
+  ["Bronze", "101 hrs"],
+];
 
 export const mttrPortfolioView = [
   {
@@ -161,78 +168,33 @@ export const mttrPortfolioView = [
 
 export const portfolioSummaryNam = {
   title: "Claims - App/Infra Health Summary",
-  data: [
-    {
-      name: "Total # of Servers",
-      value: "200",
-    },
-    {
-      name: "Total # of Application",
-      value: "40",
-    },
-    {
-      name: "# of Servers with issues",
-      value: "10",
-    },
-    {
-      name: "# of Applications with issues",
-      value: "5",
-    },
-    {
-      name: "Overall Health",
-      value: "95%",
-    },
+  rowData: [
+    ["Total # of Servers", "200"],
+    ["Total # of Application", "40"],
+    ["# of Servers with issues", "10"],
+    ["# of Applications with issues", "5"],
+    ["Overall Health", "95%"],
   ],
 };
 
 export const portfolioSummaryLatam = {
   title: "ClaimsLatam - App/Infra Health Summary",
-  data: [
-    {
-      name: "Total # of Servers",
-      value: "200",
-    },
-    {
-      name: "Total # of Application",
-      value: "40",
-    },
-    {
-      name: "# of Servers with issues",
-      value: "10",
-    },
-    {
-      name: "# of Applications with issues",
-      value: "5",
-    },
-    {
-      name: "Overall Health",
-      value: "95%",
-    },
+  rowData: [
+    ["Total # of Servers", "200"],
+    ["Total # of Application", "40"],
+    ["# of Servers with issues", "10"],
+    ["# of Applications with issues", "5"],
+    ["Overall Health", "95%"],
   ],
 };
 
 export const portfolioSummaryApac = {
   title: "ClaimsApac - App/Infra Health Summary",
-  data: [
-    {
-      name: "Total # of Servers",
-      value: "200",
-    },
-    {
-      name: "Total # of Application",
-      value: "40",
-    },
-    {
-      name: "# of Servers with issues",
-      value: "10",
-    },
-    {
-      name: "# of Applications with issues",
-      value: "5",
-    },
-    {
-      name: "Overall Health",
-      value: "95%",
-    },
+  rowData: [
+    ["Total # of Servers", "200"],
+    ["Total # of Application", "40"],
+    ["# of Servers with issues", "10"],
+    ["# of Applications with issues", "5"],
+    ["Overall Health", "95%"],
   ],
 };

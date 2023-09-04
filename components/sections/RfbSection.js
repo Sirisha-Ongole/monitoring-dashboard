@@ -16,6 +16,7 @@ import {
   incidentDataNam,
   incidentDataLatam,
   incidentDataApac,
+  cols,
 } from "../../config/incident";
 
 export const RfbSection = ({ rfbRegionSelected }) => {

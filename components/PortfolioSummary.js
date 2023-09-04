@@ -1,8 +1,34 @@
 import React from "react";
 
-import { Table } from "react-bootstrap";
+import { DataTable } from "./common/DataTable";
 
 export const PortfolioSummary = ({ data }) => {
+  const cols = [
+    "Metal Tier",
+    "Total App count",
+    "No of App compliance",
+    "% of App compliance",
+  ];
+
+  const onRowClick = () => {
+    // show alert
+    // navigate to state-of-union page in another tab
+    window.open("state.html", "_blank", "noopener noreferrer");
+  };
+
+  const size = "sm";
+
+  const classes = {
+    table: ["metricAndIncident"],
+  };
+
+  const styles = {
+    table: {
+      marginBottom: "0.5rem",
+      textAlign: "center",
+    },
+  };
+
   return (
     <div className="sectionBorder">
       <div className="row">
@@ -11,53 +37,18 @@ export const PortfolioSummary = ({ data }) => {
         </div>
       </div>
       <div className="row">
-        <p>Application Count : 100</p>
         {
-          <Table
-            striped
-            hover
-            size="sm"
-            className="metricAndIncident"
-            style={{
-              marginBottom: "0.5rem",
-              textAlign: "center",
+          <DataTable
+            tableData={{
+              cols,
+              rowData: data,
+              title: "Application Count : 100",
             }}
-          >
-            <thead>
-              <tr>
-                <td>Metal Tier</td>
-                <td>Total App count</td>
-                <td>No of App compliance</td>
-                <td>% of App compliance</td>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((item) => {
-                return (
-                  <tr
-                    key={item.criticality}
-                    onClick={
-                      // show alert
-                      () => {
-                        //navigate to state-of-union page in another tab
-                        window.open(
-                          "state.html",
-                          "_blank",
-                          "noopener noreferrer"
-                        );
-
-                      }
-                    }
-                  >
-                    <td>{item.criticality}</td>
-                    <td>{item.danger}</td>
-                    <td>{item.amber}</td>
-                    <td>{item.healthy}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </Table>
+            size={size}
+            classes={classes}
+            styles={styles}
+            onClicks={{ onRowClick }}
+          />
         }
       </div>
     </div>

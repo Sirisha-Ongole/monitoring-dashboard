@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { StrictMode, useEffect } from "react";
 import { Container } from "react-bootstrap";
 
 import { Header } from "./Header";
@@ -52,43 +52,51 @@ export const MainContainer = () => {
       setShowHygieneView(false);
       setShowMttrView(false);
     }
-  }, [showRfbView, showIssueView, showHygieneView, showMttrView, showInfraView]);
+  }, [
+    showRfbView,
+    showIssueView,
+    showHygieneView,
+    showMttrView,
+    showInfraView,
+  ]);
 
   return (
-    <Container fluid>
-      <Header setIsVisible={setIsVisible} />
-      <div className="row">
-        <div className="col-12">
-          {isVisible && (
-            <>
-              <div className="row">
-                <HexaGridsSection
-                  setShowRfbView={setShowRfbView}
-                  setShowIssueView={setShowIssueView}
-                  setShowHygieneView={setShowHygieneView}
-                  setShowMttrView={setShowMttrView}
-                  setShowInfraView={setShowInfraView}
-                  updateRfbRegionSelected={updateRfbRegionSelected}
-                />
-              </div>
-              <div className="row">
-                <div className="col-3">
-                  <SideSectionHolder />
+    // <StrictMode>
+      <Container fluid>
+        <Header setIsVisible={setIsVisible} />
+        <div className="row">
+          <div className="col-12">
+            {isVisible && (
+              <>
+                <div className="row">
+                  <HexaGridsSection
+                    setShowRfbView={setShowRfbView}
+                    setShowIssueView={setShowIssueView}
+                    setShowHygieneView={setShowHygieneView}
+                    setShowMttrView={setShowMttrView}
+                    setShowInfraView={setShowInfraView}
+                    updateRfbRegionSelected={updateRfbRegionSelected}
+                  />
                 </div>
-                <div className="col-9">
-                  {showRfbView && (
-                    <RfbSection rfbRegionSelected={rfbRegionSelected} />
-                  )}
-                  {showInfraView && <InfraSection />}
-                  {showHygieneView && <HygieneSection />}
-                  {showIssueView && <OngoingIssueView />}
-                  {showMttrView && <MttrSection />}
+                <div className="row">
+                  <div className="col-3">
+                    <SideSectionHolder />
+                  </div>
+                  <div className="col-9">
+                    {showRfbView && (
+                      <RfbSection rfbRegionSelected={rfbRegionSelected} />
+                    )}
+                    {showInfraView && <InfraSection />}
+                    {showHygieneView && <HygieneSection />}
+                    {showIssueView && <OngoingIssueView />}
+                    {showMttrView && <MttrSection />}
+                  </div>
                 </div>
-              </div>
-            </>
-          )}
+              </>
+            )}
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    // </StrictMode>
   );
 };

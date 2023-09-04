@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { PortfolioView } from "../PortfolioView";
-import { PortfolioSummary } from "../PortfolioSummary";
 
 import { mttrPortfolioView, mttrportfolioSummary } from "../../config/portfolio";
 import { MttrPortfolioSummary } from "../MttrPortfolioSummary";

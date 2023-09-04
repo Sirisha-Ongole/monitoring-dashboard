@@ -1,8 +1,8 @@
 import React, { createRef, useEffect } from "react";
 import { useState } from "react";
-import { Table } from "react-bootstrap";
 import { IncidentView } from "./IncidentView";
 import { incidentDataNam } from "../config/incident";
+import { DataTable } from "./common/DataTable";
 
 export const OngoingIssueView = () => {
   const [region, setRegion] = useState("NAM");
@@ -171,6 +171,24 @@ export const OngoingIssueView = () => {
               </div>
             </div>
             <div className="row">
+              <div className="col-12">
+                <DataTable
+                  tableData={{
+                    cols: metricCols,
+                    title,
+                    rowData: metricsRowData,
+                  }}
+                  size={size}
+                  complexData={true}
+                  styles={{
+                    table: {
+                      border: "1px solid transparent",
+                    },
+                  }}
+                />
+              </div>
+            </div>
+            <div className="row">
               <div
                 className="col-12"
                 style={{
@@ -196,43 +214,7 @@ export const OngoingIssueView = () => {
                 marginTop: "1rem",
               }}
             >
-              <div className="col">
-                <Table
-                  striped
-                  hover
-                  className="metricAndIncident"
-                  style={{
-                    textAlign: "center",
-                  }}
-                >
-                  <thead>
-                    <tr>
-                      <th>Metric</th>
-                      <th>Status</th>
-                      <th>Errors</th>
-                      <th>Log Url</th>
-                      <th>Suggestion</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {metrics.map((item, index) => {
-                      return (
-                        <tr key={index}>
-                          <td>{item.metricName}</td>
-                          <td>
-                            <div className={"box " + item.status}></div>
-                          </td>
-                          <td>
-                            <div className={"box " + item.errors}></div>
-                          </td>
-                          <td>{item.logUrl}</td>
-                          <td>{item.suggestion}</td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </Table>
-              </div>
+              <div className="col"></div>
               <div className="row">
                 <div className="col-12">
                   <IncidentView data={incidentDataNam} />
@@ -246,35 +228,42 @@ export const OngoingIssueView = () => {
   );
 };
 
-const metrics = [
-  {
-    metricName: "Application Performance",
-    status: "AMBER",
-    errors: "GREEN",
-    logUrl: "https://www.google.com",
-    suggestion: "Check the logs",
-  },
-  {
-    metricName: "Application Utilization",
-    status: "GREEN",
-    errors: "GREEN",
-    logUrl: "https://www.google.com",
-    suggestion: "-",
-  },
-  {
-    metricName: "Application Availability",
-    status: "GREEN",
-    errors: "GREEN",
-    logUrl: "https://www.google.com",
-    suggestion: "-",
-  },
-  {
-    metricName: "Web Services Performance",
-    status: "GREEN",
-    errors: "GREEN",
-    logUrl: "https://www.google.com",
-    suggestion: "-",
-  },
+const title = "Metrics";
+export const size = "sm";
+
+const metricCols = ["Metric", "Status", "Errors", "Log Url", "Suggestion"];
+const metricsRowData = [
+  [
+    "Application Performance",
+    '<div class="box  AMBER"></div>',
+    '<div class="box  GREEN"></div>',
+    "https://www.google.com",
+    "Check the logs",
+  ],
+  [
+    "Application Utilization",
+    '<div class="box  GREEN"></div>',
+    '<div class="box  GREEN"></div>',
+    "https://www.google.com",
+    "-",
+  ],
+
+  [
+    "Application Availability",
+    '<div class="box  GREEN"></div>',
+    '<div class="box  GREEN"></div>',
+
+    "https://www.google.com",
+    "-",
+  ],
+  [
+    "Web Services Performance",
+    '<div class="box  GREEN"></div>',
+    '<div class="box  GREEN"></div>',
+
+    "https://www.google.com",
+    "-",
+  ],
 ];
 
 const regionData = [

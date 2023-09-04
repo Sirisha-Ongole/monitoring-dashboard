@@ -1,11 +1,18 @@
 import React from "react";
-import { Table } from "react-bootstrap";
 import { BarChart } from "./charts/BarChart";
+import { DataTable } from "./common/DataTable";
 
 export const SideSection = () => {
+  // const discrepanciesCols = ["Premium", "Reinsurance Premium", "Commission"];
+  const discrepanciesData = [
+    ["Premium", "- 3%"],
+    ["Reinsurance Premium", "- 1%"],
+    ["Commission", "+ 0.50%"],
+  ];
+
   return (
     <div
-    className="sectionBorder"
+      className="sectionBorder"
       style={{
         marginTop: "1rem",
         fontSize: "0.8rem",
@@ -25,29 +32,20 @@ export const SideSection = () => {
         Business KPI
       </h4>
 
-      <p
-        style={{
-          textAlign: "center",
+      <DataTable
+        tableData={{
+          // cols: discrepanciesCols,
+          rowData: discrepanciesData,
+          title: "Discrepancies Bound vs Booked",
+          styles: {
+            table: {
+              width: "90px",
+              textAlign: "center",
+            },
+          },
         }}
-      >
-        Discrepancies Bound vs Booked
-      </p>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Premium</th>
-            <th>Reinsurance Premium</th>
-            <th>Commission</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>- 3%</td>
-            <td>- 1%</td>
-            <td>+ 0.50%</td>
-          </tr>
-        </tbody>
-      </Table>
+        size="sm"
+      />
 
       <div className="row">
         <div className="col-8">
