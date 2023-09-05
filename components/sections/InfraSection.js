@@ -1,7 +1,8 @@
 import React from "react";
 import { NetworkStatus } from "../NetworkStatus";
-import { StatOverviewBox } from "../StatOverviewBox";
+import { CustomCard } from "../StatOverviewBox2";
 import { randomizeArray } from "../../utils";
+
 
 export const InfraSection = ({ title }) => {
   return (
@@ -9,6 +10,7 @@ export const InfraSection = ({ title }) => {
       {infraData.map((data, index) => {
         return (
           <>
+          
             <div className="row" key={index}>
               <div className="col-12">
                 <h3
@@ -22,10 +24,10 @@ export const InfraSection = ({ title }) => {
               </div>
             </div>
             <div className="row">
-              <div className="col-6">
-                <StatOverviewBox data={data.data} />
+              <div className="col-4">
+                <CustomCard cardData={data.data} />
               </div>
-              <div className="col-6">
+              <div className="col-8">
                 <NetworkStatus sparklineData={randomizeArray(sparklineData)} />
               </div>
             </div>
@@ -51,8 +53,8 @@ const onPremData = {
   issues: [
     { title: "App Server", status: "", withIssues: 3, total: 10 },
     { title: "Web Server", status: "", withIssues: 1, total: 10 },
-    { title: "Database", status: "", withIssues: 3, total: 10 },
-    { title: "Datastage", status: "", withIssues: 5, total: 10 },
+    { title: "DB", status: "", withIssues: 3, total: 10 },
+    { title: "Data Stage", status: "", withIssues: 5, total: 10 },
   ],
 };
 

@@ -52,10 +52,21 @@ export const MainContainer = () => {
       setShowHygieneView(false);
       setShowMttrView(false);
     }
-  }, [showRfbView, showIssueView, showHygieneView, showMttrView, showInfraView]);
+  }, [
+    showRfbView,
+    showIssueView,
+    showHygieneView,
+    showMttrView,
+    showInfraView,
+  ]);
 
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        fontFamily: "DM Sans-Bold, Helvetica",
+      }}
+    >
       <Header setIsVisible={setIsVisible} />
       <div className="row">
         <div className="col-12">
@@ -72,10 +83,10 @@ export const MainContainer = () => {
                 />
               </div>
               <div className="row">
-                <div className="col-3">
+                <div className="col-2">
                   <SideSectionHolder />
                 </div>
-                <div className="col-9">
+                <div className="col-10">
                   {showRfbView && (
                     <RfbSection rfbRegionSelected={rfbRegionSelected} />
                   )}

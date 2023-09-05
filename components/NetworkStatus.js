@@ -1,13 +1,15 @@
 import React from "react";
 import { SparkChart } from "./charts/SparkChart";
 
-export const NetworkStatus = ({sparklineData}) => {
+export const NetworkStatus = ({ sparklineData }) => {
   return (
     <div
-      className="sectionBorder"
+      className="cards"
       style={{
         backgroundColor: "lightgrey",
         height: "100%",
+        color: "white",
+        padding: "1rem",
       }}
     >
       <div className="row">
@@ -17,7 +19,13 @@ export const NetworkStatus = ({sparklineData}) => {
             paddingRight: "0px",
           }}
         >
-          <h5>Network Status</h5>
+          <p
+            style={{
+              fontSize: "1.3rem",
+            }}
+          >
+            Network Status
+          </p>
         </div>
         <div
           className="col-7"
@@ -39,7 +47,7 @@ export const NetworkStatus = ({sparklineData}) => {
         >
           <p
             style={{
-              fontSize: "1.1rem",
+              fontSize: "1rem",
             }}
           >
             Talkers
@@ -47,7 +55,7 @@ export const NetworkStatus = ({sparklineData}) => {
           <p>
             <span
               style={{
-                fontSize: "1.1rem",
+                fontSize: "1rem",
               }}
             >
               45
@@ -57,7 +65,7 @@ export const NetworkStatus = ({sparklineData}) => {
           <p>
             <span
               style={{
-                fontSize: "1.1rem",
+                fontSize: "1rem",
               }}
             >
               8
@@ -66,7 +74,7 @@ export const NetworkStatus = ({sparklineData}) => {
           </p>
         </div>
         <div className="col-8">
-          <SparkChart sparklineData={sparklineData}/>
+          <SparkChart sparklineData={sparklineData} />
         </div>
       </div>
     </div>

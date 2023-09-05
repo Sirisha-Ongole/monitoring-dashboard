@@ -1,0 +1,9 @@
+.cards {
+  background-color: #313131 !important;
+  border-radius: 8px;
+  box-shadow: var(--base);
+  /* height: 294px; */
+  position: relative;
+  /* width: 693px; */
+  font-family: "DM Sans-Bold", Helvetica
+}

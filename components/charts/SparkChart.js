@@ -11,17 +11,15 @@ export const SparkChart = ({ sparklineData }) => {
   ];
   return (
     <div>
-      <Chart options={optionsSpark3} series={series} type="area" />
+      <Chart options={optionsSpark3} series={series} type="area" height={110}/>
     </div>
   );
 };
 
-
-
 var optionsSpark3 = {
   chart: {
     type: "area",
-    height: 160,
+    // height: 130,
     sparkline: {
       enabled: true,
     },
@@ -41,17 +39,19 @@ var optionsSpark3 = {
     min: 0,
   },
   title: {
-    text: "$135,965",
-    offsetX: 0,
-    style: {
-      fontSize: "24px",
-    },
-  },
-  subtitle: {
-    text: "Profits",
+    text: "0.1ms",
     offsetX: 0,
     style: {
       fontSize: "14px",
+      color: "white",
+    },
+  },
+  subtitle: {
+    text: "Latency",
+    offsetX: 0,
+    style: {
+      fontSize: "14px",
+      color: "white",
     },
   },
 };
