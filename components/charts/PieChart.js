@@ -8,6 +8,9 @@ export const PieChart = ({ series, cols }) => {
     labels: cols,
     legend: {
       position: "bottom",
+      style: {
+        color: "white",
+      },
     },
   };
 

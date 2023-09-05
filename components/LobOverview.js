@@ -5,7 +5,7 @@ import { PieChart } from "./charts/PieChart";
 
 export const LobOverview = () => {
   return (
-    <div className="sectionBorder" style={{ marginTop: "1rem" }}>
+    <div className="sectionBorder darkmode-background" style={{ marginTop: "1rem" }}>
       {/* <DataTable tableData={tableData} /> */}
       <p
         style={{
@@ -40,5 +40,7 @@ const tableData = {
   footerRow: ["Total", 1200],
   title: "GI Applications Landscape",
   cols: ["Region", "Count"],
+  // set color for legend
+  colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0"],
 };
 // { data: serverData, title: "GI Servers", cols:["Application", "Count"] },

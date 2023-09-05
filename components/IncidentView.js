@@ -8,12 +8,12 @@ export const IncidentView = ({ data = [] }) => {
   };
 
   return (
-    <>
+    <div className="darkmode-background">
       <DataTable
         tableData={data}
         classes={{ table: tableClass }}
         styles={{ table: tableStyle }}
       />
-    </>
+    </div>
   );
 };

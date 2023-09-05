@@ -14,11 +14,12 @@ export const DataTable = ({
   const titleRowStyle = {
     textAlign: "center",
     backgroundColor: "lightblue",
+    color: "black",
   };
 
   const rowStyle = { textAlign: "center" };
 
-  const headStyle = { textAlign: "center" };
+  const headStyle = { textAlign: "center",backgroundColor: "lightblue",color: "black" };
 
   const footerStyle = { fontWeight: "bold", textAlign: "center" };
 

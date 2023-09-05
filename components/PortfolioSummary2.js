@@ -13,7 +13,7 @@ export const PortfolioSummary2 = ({ data }) => {
   return (
     <>
       {
-        <div className="sectionBorder">
+        <div className="sectionBorder darkmode-background">
           <div className="row">
             <div className="col portfolioHeader">
               <p>{data.title}</p>

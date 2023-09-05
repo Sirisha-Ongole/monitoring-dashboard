@@ -14,7 +14,7 @@ export const NetworkStatus = ({ sparklineData }) => {
     >
       <div className="row">
         <div
-          className="col-5"
+          className="col-3"
           style={{
             paddingRight: "0px",
           }}
@@ -28,7 +28,7 @@ export const NetworkStatus = ({ sparklineData }) => {
           </p>
         </div>
         <div
-          className="col-7"
+          className="col-9"
           style={{
             paddingLeft: "0px",
           }}
@@ -39,10 +39,10 @@ export const NetworkStatus = ({ sparklineData }) => {
       </div>
       <div className="row">
         <div
-          className="col-4"
+          className="col-2"
           style={{
             //right border with dotted lines
-            borderRight: "1px dotted #000",
+            borderRight: "1px dotted grey",
           }}
         >
           <p

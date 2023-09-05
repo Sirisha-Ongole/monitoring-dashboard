@@ -2,7 +2,7 @@ import React from "react";
 
 export const PortfolioView = ({ data = [], setShowRfbPortfolioView }) => {
   return (
-    <div className="sectionBorder">
+    <div className="sectionBorder darkmode-background">
       <div className="row">
         <div className="col portfolioHeader">
           <p>Portfolios</p>

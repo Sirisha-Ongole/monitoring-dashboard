@@ -48,5 +48,10 @@ const options = {
       distributed: true,
     },
   },
+  xaxis: {
+    style: {
+      color: "white",
+    }
+  },
   colors: colors,
 };

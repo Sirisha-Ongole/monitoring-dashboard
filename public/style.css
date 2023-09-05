@@ -223,3 +223,7 @@ table {
   text-align: right;
   /* color: red; */
 }
+
+.darkmode-background{
+  background-color: #313131 !important;
+}

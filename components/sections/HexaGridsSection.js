@@ -51,7 +51,9 @@ export const HexaGridsSection = ({
           justifyContent: "center",
         }}
       >
-        <div className="col-2">
+        <div
+          className="col-2"
+        >
           <HexagonGrid
             gridData={rfbDataState}
             setShowView={setShowRfbView}

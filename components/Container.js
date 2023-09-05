@@ -66,6 +66,7 @@ export const MainContainer = () => {
       style={{
         fontFamily: "DM Sans-Bold, Helvetica",
       }}
+      
     >
       <Header setIsVisible={setIsVisible} />
       <div className="row">

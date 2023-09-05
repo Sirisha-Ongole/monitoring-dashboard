@@ -34,9 +34,11 @@ export const HexagonGrid = ({ gridData, setShowView, updateSelected }) => {
     <div
       className="hexGridHolder"
       style={{
+        backgroundColor: "rgb(49,49,51)",
         border: "1px solid rgba(var(--callout-border-rgb), 0.3)",
         textAlign: "center",
         marginTop: "0.5rem",
+        
       }}
     >
       <h5

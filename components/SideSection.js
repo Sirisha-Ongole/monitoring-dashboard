@@ -12,7 +12,7 @@ export const SideSection = () => {
   ];
 
   return (
-    <>
+    <div className="darkmode-background">
       <div
         className="sectionBorder"
         style={{
@@ -20,14 +20,14 @@ export const SideSection = () => {
           fontSize: "0.8rem",
         }}
       >
-        <div className="row">
-          <div className="col-12">
-            <BarChart data={[100, 150, 200, 100, 50, 80]} title="Active Tickets by Business functions"/>
+        <div className="row ">
+          <div className="col-12 ">
+            <BarChart className="" data={[100, 150, 200, 100, 50, 80]} title="Active Tickets by Business functions"/>
           </div>
         </div>
       </div>
       <BusinessKpi discrepanciesData={discrepanciesData} />
-    </>
+    </div>
   );
 };
 
