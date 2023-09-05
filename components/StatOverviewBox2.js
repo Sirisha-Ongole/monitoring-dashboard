@@ -7,7 +7,14 @@ export const CustomCard = ({ cardData }) => {
     <>
       {cardData && cardData.issues && cardData.issues.length > 0 && (
         <div className="cards">
-          <div style={{ color: "white" }} className="p-5">
+          <div
+            style={{
+              color: "white",
+              paddingBottom: "0px !important",
+              padding: "3rem",
+            }}
+            className=""
+          >
             <Row>
               <p
                 style={{
@@ -58,6 +65,19 @@ export const CustomCard = ({ cardData }) => {
                   </Col>
                 );
               })}
+            </Row>
+            <Row style={{}}>
+              <Col
+                style={{
+                  textAlign: "right",
+                  fontSize: "0.7rem",
+                }}
+                onClick={() => {
+                  window.open("aws_console.html", "_blank", "noopener noreferrer");
+                }}
+              >
+                AWS Observability Logs
+              </Col>
             </Row>
           </div>
         </div>
