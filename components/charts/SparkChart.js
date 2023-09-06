@@ -11,7 +11,8 @@ export const SparkChart = ({ sparklineData }) => {
   ];
   return (
     <div>
-      <Chart options={optionsSpark3} series={series} type="area" height={110}/>
+      <Chart options={optionsSpark3} series={series} type="area" height={110} />
+      
     </div>
   );
 };

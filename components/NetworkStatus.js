@@ -1,5 +1,7 @@
 import React from "react";
 import { SparkChart } from "./charts/SparkChart";
+import { DynamicSparklines } from "./charts/DynamicSparklines";
+import dynamic from "next/dynamic";
 
 export const NetworkStatus = ({ sparklineData }) => {
   return (
@@ -14,7 +16,7 @@ export const NetworkStatus = ({ sparklineData }) => {
     >
       <div className="row">
         <div
-          className="col-3"
+          className="col-4"
           style={{
             paddingRight: "0px",
           }}
@@ -24,11 +26,11 @@ export const NetworkStatus = ({ sparklineData }) => {
               fontSize: "1.3rem",
             }}
           >
-            Network Status
+            Network Performance
           </p>
         </div>
         <div
-          className="col-9"
+          className="col-8"
           style={{
             paddingLeft: "0px",
           }}
@@ -38,7 +40,7 @@ export const NetworkStatus = ({ sparklineData }) => {
         </div>
       </div>
       <div className="row">
-        <div
+        {/* <div
           className="col-2"
           style={{
             //right border with dotted lines
@@ -58,7 +60,7 @@ export const NetworkStatus = ({ sparklineData }) => {
                 fontSize: "1rem",
               }}
             >
-              45
+              4500
             </span>{" "}
             Processes
           </p>
@@ -72,11 +74,28 @@ export const NetworkStatus = ({ sparklineData }) => {
             </span>{" "}
             Hosts
           </p>
-        </div>
-        <div className="col-8">
-          <SparkChart sparklineData={sparklineData} />
+        </div> */}
+        <div className="col-12">
+          {dynamicSparklineTitles.map((title, index) => {
+            return (
+              <div
+                key={index}
+                style={{
+                  border: "1px solid grey",
+                  marginBottom: "0.3rem",
+                  padding: "1rem",
+                  // shadow
+                  boxShadow: "0 0 10px rgba(0,0,0,0.9)",
+                }}
+              >
+                <DynamicSparklines title={title} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
   );
 };
+
+const dynamicSparklineTitles = ["Latency", "Throughput", "Bandwidth"];
