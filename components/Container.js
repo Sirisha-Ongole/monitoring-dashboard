@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import { Header } from "./Header";
 import { OngoingIssueView } from "./sections/OngoingIssues";
 import { SideSection } from "./sections/SideSection/SideSection";
-import { HexaGridsSection } from "./sections/HexaGrids";
+import { HexaGridsSection } from "./sections/HexGrids";
 import { RfbSection } from "./sections/RfbSection";
 import { HygieneSection } from "./sections/Hygiene";
 import { MttrSection } from "./sections/Mttr";
@@ -69,7 +69,9 @@ export const MainContainer = () => {
       
     >
       <Header setIsVisible={setIsVisible} />
-      <div className="row">
+      <div className="row" style={{
+        paddingTop: "80px",
+      }}>
         <div className="col-12">
           {isVisible && (
             <>

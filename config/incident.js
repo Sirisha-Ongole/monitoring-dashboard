@@ -21,6 +21,30 @@ const rowDataNamFL = [
   ],
 ];
 
+const rowDataData = [
+  [
+    "INC2362475",
+    "P3",
+    "In Progress",
+    "Download not working",
+    "DataApp1",
+    "2",
+    "uks-yr338",
+    "John Doe",
+  ],
+  [
+    "INC2362476",
+    "P3",
+    "In Progress",
+    "Document upload issue",
+    "DataApp2",
+    "3",
+    "nrw-yf738",
+    "John Doe",
+  ],
+];
+
+
 const rowDataNamCslty = [
   [
     "INC24365837",
@@ -154,7 +178,7 @@ export const incidentDataNamCslty = {
 };
 
 export const incidentDataNam = {
-  rowData: rowDataNamFL.concat(rowDataNamCslty),
+  rowData: rowDataNamFL.concat(rowDataNamCslty).concat(rowDataData),
   cols: cols,
   needsAttention: {
     styleOn: 0,

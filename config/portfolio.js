@@ -172,7 +172,7 @@ export const portfolioSummaryNam = {
     ["Total # of Servers", "200"],
     ["Total # of Application", "40"],
     ["# of Servers with issues", "10"],
-    ["# of Applications with issues", "5"],
+    ["# of Applications with issues", "6"],
     ["Overall Health", "95%"],
   ],
 };
