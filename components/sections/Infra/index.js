@@ -31,7 +31,7 @@ export const InfraSection = ({ title }) => {
                   <RadialChartMultiple />
                 </div>
                 <div className="row">
-                  <DynamicLineChart />
+                  <DynamicLineChart id={data.title + "Chart"} />
                 </div>
               </div>
               <div className="col-8">

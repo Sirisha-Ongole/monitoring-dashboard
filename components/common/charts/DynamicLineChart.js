@@ -9,7 +9,7 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 // Timeinterval is set to 3 seconds
 // xaxis shows time in hh:mm format
 // yaxis shows random data between 0 to 100
-export const DynamicLineChart = () => {
+export const DynamicLineChart = ({ id }) => {
   const [series, setSeries] = useState([
     {
       data: data.slice(),
@@ -18,7 +18,7 @@ export const DynamicLineChart = () => {
 
   const options = {
     chart: {
-      id: "realtime",
+      id: id,
       height: 350,
       type: "line",
       animations: {
@@ -78,7 +78,7 @@ export const DynamicLineChart = () => {
   useInterval(() => {
     getNewSeries(lastDate, { min: 10, max: 90 });
 
-    ApexCharts.exec("realtime", "updateSeries", [
+    ApexCharts.exec(id, "updateSeries", [
       {
         data: data,
       },
