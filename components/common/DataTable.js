@@ -19,7 +19,11 @@ export const DataTable = ({
 
   const rowStyle = { textAlign: "center" };
 
-  const headStyle = { textAlign: "center",backgroundColor: "lightblue",color: "black" };
+  const headStyle = {
+    textAlign: "center",
+    backgroundColor: "lightblue",
+    color: "black",
+  };
 
   const footerStyle = { fontWeight: "bold", textAlign: "center" };
 
@@ -83,7 +87,31 @@ export const DataTable = ({
                           dangerouslySetInnerHTML={{ __html: col }}
                         ></td>
                       ) : (
-                        <td key={index}>{col}</td>
+                        <td
+                          key={index} // if needsattention is defined, check if the value of the column is equal to the value defined in needsattention.value
+                          style={
+                            tableData.needsAttention &&
+                            tableData.needsAttention.styleOn === index &&
+                            item[tableData.needsAttention.checkCol] ===
+                              tableData.needsAttention.value
+                              ? styles.needsAttention
+                                ? styles.needsAttention
+                                : { 
+                                    // flasing red
+                                    animation: "blinker 1s linear infinite",
+                                    backgroundColor: "red",
+
+
+
+                                 }
+                              : styles.rowStyle
+                              ? styles.rowStyle
+                              : rowStyle
+                          }
+                          
+                        >
+                          {col}
+                        </td>
                       )
                     )}
                   </tr>

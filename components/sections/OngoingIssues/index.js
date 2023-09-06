@@ -1,7 +1,10 @@
 import React, { createRef, useEffect } from "react";
 import { useState } from "react";
 import { IncidentView } from "../../common/IncidentView";
-import { incidentDataNam } from "../../../config/incident";
+import {
+  incidentDataNamCslty,
+  incidentDataNamFL,
+} from "../../../config/incident";
 import { DataTable } from "../../common/DataTable";
 
 export const OngoingIssueView = () => {
@@ -9,26 +12,37 @@ export const OngoingIssueView = () => {
   const [bundle, setBundle] = useState("");
 
   const [data, setBundleData] = useState([]);
+  const [incidentData, setIncidentData] = useState([]);
 
   const namRef = createRef();
 
   useEffect(() => {
     if (bundle === "Financial Lines") {
       setBundleData(flData);
+      setIncidentData(incidentDataNamFL);
     } else if (bundle === "Casualty") {
       setBundleData(csltyData);
+      setIncidentData(incidentDataNamCslty);
     }
   }, [bundle]);
 
   const boxTitleStyle = {
     color: "black",
     fontWeight: "bold",
+    fontSize: "1.5rem",
+    marginBottom: "0",
   };
 
   return (
     <div className="row">
       <div className="col-12">
-        <h3>Ongoing Issues View</h3>
+        <h3
+          style={{
+            textAlign: "center",
+          }}
+        >
+          P1/P2 Issues View
+        </h3>
         {/* <div className="row">
         {regionData.map((item, index) => {
           return (
@@ -53,16 +67,19 @@ export const OngoingIssueView = () => {
           <>
             <div className="issueViewRow">
               <div className="row">
-                <div className="col-10 issueViewHeading">
+                <div className="col-2 issueViewHeading">
                   <p style={boxTitleStyle}>Bundle</p>
                 </div>
               </div>
-              <div className="row" style={{ display: "flex" }}>
+              <div
+                className="row"
+                style={{ display: "flex", justifyContent: "center" }}
+              >
                 {bundleData.map((item, index) => {
                   return (
                     <div
                       key={index}
-                      className="col-4"
+                      className="col-2"
                       onClick={() => {
                         if (item.clickable) {
                           setBundle(item.name);
@@ -85,11 +102,16 @@ export const OngoingIssueView = () => {
           <>
             <div className="issueViewRow">
               <div className="row">
-                <div className="col-10 issueViewHeading">
+                <div className="col-2 issueViewHeading">
                   <p style={boxTitleStyle}>Business Function</p>
                 </div>
               </div>
-              <div className="row">
+              <div
+                className="row"
+                style={{
+                  justifyContent: "center",
+                }}
+              >
                 {data.businessFunctionData &&
                   data.businessFunctionData.map((item, index) => {
                     return (
@@ -107,24 +129,49 @@ export const OngoingIssueView = () => {
 
             <div className="issueViewRow">
               <div className="row">
-                <div className="col-10 issueViewHeading">
+                <div className="col-2 issueViewHeading">
                   <p style={boxTitleStyle}>Applications</p>
                 </div>
               </div>
-              <div className="row">
+              <div
+                className="row"
+                style={{
+                  justifyContent: "center",
+                }}
+              >
                 {data.appData &&
                   data.appData.map((item, index) => {
                     return (
-                      <div key={index} className="col-4">
-                        <div className={`issueViewItem ${item.css}`}>
-                          <div>{item.name}</div>
-                          <div
+                      <div key={index} className="col-2">
+                        <div
+                          className={`d-flex issueViewItem ${item.css}`}
+                          style={{
+                            justifyContent: "flex-start",
+                            position: "relative"
+                          }}
+                        >
+                          <span
                             style={{
+                              flex: "0 1 auto",
+                              
+                              /* new */
+                              left: "50%",
+                              transform: "translateX(50%)",
+                            }}
+                          >
+                            {item.name}
+                          </span>
+                          <span
+                            style={{
+                              flex: "0 1 auto",
+                              /* new */
+                              marginLeft: "auto",
+                              // transform: "translateX(-50%)",
                               fontSize: "0.7rem",
                             }}
                           >
                             {item.metal}
-                          </div>
+                          </span>
                         </div>
                       </div>
                     );
@@ -134,15 +181,20 @@ export const OngoingIssueView = () => {
             <div className="row">
               <div className="issueViewRow col-6">
                 <div className="row">
-                  <div className="col-10 issueViewHeading">
-                    <p style={boxTitleStyle}>Infra Issues</p>
+                  <div className="col-5 issueViewHeading">
+                    <p style={boxTitleStyle}>Infrastructure Issues</p>
                   </div>
                 </div>
-                <div className="row">
+                <div
+                  className="row"
+                  style={{
+                    justifyContent: "center",
+                  }}
+                >
                   {data.infraData &&
                     data.infraData.map((item, index) => {
                       return (
-                        <div key={index} className="col-4">
+                        <div key={index} className="col-3">
                           <div>
                             <p className={` issueViewItem ${item.css}`}>
                               {item.name}
@@ -155,15 +207,20 @@ export const OngoingIssueView = () => {
               </div>
               <div className="issueViewRow col-6">
                 <div className="row">
-                  <div className="col-10 issueViewHeading">
-                    <p style={boxTitleStyle}>Component-level Issues</p>
+                  <div className="col-5 issueViewHeading">
+                    <p style={boxTitleStyle}>Component Issues</p>
                   </div>
                 </div>
-                <div className="row">
+                <div
+                  className="row"
+                  style={{
+                    justifyContent: "center",
+                  }}
+                >
                   {data.serverData &&
                     data.serverData.map((item, index) => {
                       return (
-                        <div key={index} className="col-4">
+                        <div key={index} className="col-3">
                           <div>
                             <p className={` issueViewItem ${item.css}`}>
                               {item.name}
@@ -185,7 +242,6 @@ export const OngoingIssueView = () => {
                   }}
                   size={size}
                   complexData={true}
-                  
                 />
               </div>
             </div>
@@ -218,7 +274,7 @@ export const OngoingIssueView = () => {
               <div className="col"></div>
               <div className="row">
                 <div className="col-12">
-                  <IncidentView data={incidentDataNam} />
+                  <IncidentView data={incidentData} />
                 </div>
               </div>
             </div>
@@ -347,13 +403,28 @@ const flApplicationData = [
   },
   {
     name: "FLApp2",
-    css: "issueViewRed",
+    css: "issueViewGreen",
     metal: "Gold",
   },
   {
     name: "FLApp3",
     css: "issueViewRed",
     metal: "Silver",
+  },
+  {
+    name: "FLApp4",
+    css: "issueViewGreen",
+    metal: "Bronze",
+  },
+  {
+    name: "FLApp5",
+    css: "issueViewGreen",
+    metal: "Bronze",
+  },
+  {
+    name: "FLApp6",
+    css: "issueViewRed",
+    metal: "Bronze",
   },
 ];
 
@@ -385,7 +456,7 @@ const flInfrastructureData = [
     css: "issueViewGreen",
   },
   {
-    name: "DataStage",
+    name: "Data Stage",
     css: "issueViewGreen",
   },
 ];
@@ -397,7 +468,7 @@ const flServerData = [
     css: "issueViewGreen",
   },
   {
-    name: "Batch Server",
+    name: "Batch",
     css: "issueViewGreen",
   },
   {
@@ -424,7 +495,7 @@ const csltyInfrastructureData = [
     css: "issueViewGreen",
   },
   {
-    name: "DataStage",
+    name: "Data Stage",
     css: "issueViewGreen",
   },
 ];
@@ -436,7 +507,7 @@ const csltyServerData = [
     css: "issueViewRed",
   },
   {
-    name: "Batch Server",
+    name: "Batch",
     css: "issueViewGreen",
   },
   {

@@ -58,6 +58,10 @@
   fill: orange !important;
 }
 
+.TITLE g {
+  fill: rgb(25, 22, 215) !important;
+}
+
 /* Font size of elements inside <table> to 1em */
 table {
   font-size: 0.7rem;
@@ -96,7 +100,7 @@ table {
 }
 
 .appViewGreen {
-  background-color: rgba(126, 165, 47, 0.7) !important;
+  background-color: rgba(126, 165, 47, 0.6) !important;
 }
 
 .issueViewRed {
@@ -109,7 +113,7 @@ table {
 }
 
 .issueViewGreen {
-  background-color: rgba(126, 165, 47, 0.7) !important;
+  background-color: rgba(35,97,31, 0.7) !important;
 }
 
 .issueViewGreen:hover {
@@ -123,6 +127,7 @@ table {
   /* margin: 0.2rem; */
   border: 1px solid black;
   margin-top: 0.4rem !important;
+  font-size: 1.3rem;
   /* margin-left: 1.5rem; */
   /* margin-bottom: 0.7rem; */
 }
@@ -130,7 +135,7 @@ table {
 .issueViewRow {
   /* Dashed square border */
   margin-top: 0.7rem !important;
-  border: 1px dashed black;
+  border: 1px dashed grey;
   padding: 0.2rem;
 }
 
@@ -142,7 +147,7 @@ table {
 .issueViewHeading {
   /* Centre the text inside */
   text-align: center;
-  background-color: lightblue;
+  background-color: rgb(8, 167, 220);
   /* Centre */
   margin-left: auto;
   margin-right: auto;
@@ -226,4 +231,16 @@ table {
 
 .darkmode-background{
   background-color: #313131 !important;
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }

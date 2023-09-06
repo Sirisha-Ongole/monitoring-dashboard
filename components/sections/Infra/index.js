@@ -3,6 +3,7 @@ import { NetworkStatus } from "./NetworkStatus";
 import { CustomCard } from "../../common/CustomCard";
 import { RadialChartMultiple } from "../../common/charts/RadialChartMultiple";
 import { DynamicLineChart } from "../../common/charts/DynamicLineChart";
+import { DataTable } from "../../common/DataTable";
 
 export const InfraSection = ({ title }) => {
   // extract title from infraData
@@ -11,6 +12,8 @@ export const InfraSection = ({ title }) => {
   const [selectedProblemComponent, setSelectedProblemComponent] =
     React.useState([]);
 
+  const [impactedApps, setImpactedApps] = React.useState(impactedAppsData);
+
   useEffect(() => {
     const infraTitles = infraData.map((data) => {
       return { title: data.title, selected: data.data.issues[0].title };
@@ -18,8 +21,45 @@ export const InfraSection = ({ title }) => {
     console.log(infraTitles);
     setSelectedProblemComponent(infraTitles);
   }, []);
-  
-  
+
+  // useEffect(() => {
+  //   if (selectedProblemComponent.length > 0) {
+  //     let selected = selectedProblemComponent.filter(
+  //       (data) => data.title === "AWS"
+  //     );
+  //     console.log(selected);
+  //     if (selected[0].selected === "EC2") {
+  //       // Copy impactedApps to a new object
+  //       impactedApps.cols = ["EC2 (XX.XX.XX.XX) Impacted Applications"];
+  //     } else if (selected[0].selected === "ECS") {
+  //       impactedApps.cols = ["ECS (XX.XX.XX.XX) Impacted Applications"];
+  //     } else if (selected[0].selected === "RDS") {
+  //       impactedApps.cols = ["RDS (XX.XX.XX.XX) Impacted Applications"];
+  //     } else if (selected[0].selected === "EKS") {
+  //       impactedApps.cols = ["EKS (XX.XX.XX.XX) Impacted Applications"];
+  //     } else if (selected[0].selected === "VMC") {
+  //       impactedApps.cols = ["VMC (XX.XX.XX.XX) Impacted Applications"];
+  //     }
+
+  //     selected = selectedProblemComponent.filter(
+  //       (data) => data.title === "On-Prem"
+  //     );
+  //     if (selected[0].selected === "App Server") {
+  //       impactedApps.cols = ["App Server (XX.XX.XX.XX) Impacted Applications"];
+  //     }
+  //     if (selected[0].selected === "Web Server") {
+  //       impactedApps.cols = ["Web Server (XX.XX.XX.XX) Impacted Applications"];
+  //     }
+  //     if (selected[0].selected === "DB") {
+  //       impactedApps.cols = ["DB (XX.XX.XX.XX) Impacted Applications"];
+  //     }
+  //     if (selected[0].selected === "Data Stage") {
+  //       impactedApps.cols = ["Data Stage (XX.XX.XX.XX) Impacted Applications"];
+  //     }
+  //   }
+  //   setImpactedApps(impactedApps);
+  // }, [selectedProblemComponent]);
+
   return (
     <>
       {infraData.map((data, index) => {
@@ -53,7 +93,9 @@ export const InfraSection = ({ title }) => {
                   />
                 </div>
                 <div className="row">
-                  <DynamicLineChart id={data.title + "Chart"} />
+                  {/* <DynamicLineChart id={data.title + "Chart"} /> */}
+                  <DataTable tableData={impactedApps} />
+                  <DataTable tableData={serverUtilization} />
                 </div>
               </div>
               <div className="col-8">
@@ -67,6 +109,15 @@ export const InfraSection = ({ title }) => {
   );
 };
 
+const impactedAppsData = {
+  rowData: [["App 1"], ["App 2"], ["App 3"], ["App 4"], ["App 5"]],
+  cols: ["(XX.XX.XX.XX) - Impacted Applications"],
+};
+
+const serverUtilization = {
+  rowData: [["Under Utilized"]],
+  cols: ["Server Utilization"],
+}
 const awsData = {
   title: "Problems",
   issues: [

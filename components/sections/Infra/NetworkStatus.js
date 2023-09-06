@@ -26,7 +26,7 @@ export const NetworkStatus = ({ sparklineData }) => {
               fontSize: "1.3rem",
             }}
           >
-            Network Performance
+            Network Performance - US East
           </p>
         </div>
         <div

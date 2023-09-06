@@ -62,7 +62,7 @@ export const rfbData = {
 };
 
 export const infraData = {
-  title: "Infra Health",
+  title: "Infrastructure Health",
   data: [
     {
       name: "NAM",

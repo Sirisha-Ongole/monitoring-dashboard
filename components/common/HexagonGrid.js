@@ -50,7 +50,7 @@ export const HexagonGrid = ({ gridData, setShowView, updateSelected }) => {
       </h5>
       <HexGrid width={250} height={330} viewBox={viewBox}>
         <Layout size={{ x: 15, y: 15 }} spacing={1.1}>
-          <Hexagon q={0} r={0} s={0}>
+          <Hexagon q={0} r={0} s={0} className="TITLE">
             <Text>{gridData.title}</Text>
           </Hexagon>
           {gridData.data.map((item) => {
