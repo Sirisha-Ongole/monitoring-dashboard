@@ -4,6 +4,8 @@ import { CustomCard } from "../../common/CustomCard";
 import { RadialChartMultiple } from "../../common/charts/RadialChartMultiple";
 import { DynamicLineChart } from "../../common/charts/DynamicLineChart";
 import { DataTable } from "../../common/DataTable";
+import { PieChart } from "../../common/charts/PieChart";
+import { Col } from "react-bootstrap";
 
 export const InfraSection = ({ title }) => {
   // extract title from infraData
@@ -92,10 +94,31 @@ export const InfraSection = ({ title }) => {
                     selectionKey={data.title}
                   />
                 </div>
-                <div className="row">
+
+                <div
+                  className="row"
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
                   {/* <DynamicLineChart id={data.title + "Chart"} /> */}
                   <DataTable tableData={impactedApps} />
-                  <DataTable tableData={serverUtilization} />
+                  {/* <DataTable tableData={serverUtilization} /> */}
+                  <h5>Server Utilization</h5>
+                  <br />
+                  <Col
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <PieChart
+                      series={[50, 40, 10, 10]}
+                      cols={["EC2", "RDS", "EKS", "VMC"]}
+                      height={200}
+                    />
+                  </Col>
                 </div>
               </div>
               <div className="col-8">
@@ -117,7 +140,7 @@ const impactedAppsData = {
 const serverUtilization = {
   rowData: [["Under Utilized"]],
   cols: ["Server Utilization"],
-}
+};
 const awsData = {
   title: "Problems",
   issues: [

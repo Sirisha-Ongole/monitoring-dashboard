@@ -102,8 +102,8 @@ export const OngoingIssueView = () => {
           <>
             <div className="issueViewRow">
               <div className="row">
-                <div className="col-2 issueViewHeading">
-                  <p style={boxTitleStyle}>Business Function</p>
+                <div className="col-4 issueViewHeading">
+                  <p style={boxTitleStyle}>Business Function Impact</p>
                 </div>
               </div>
               <div
@@ -147,16 +147,13 @@ export const OngoingIssueView = () => {
                           className={`d-flex issueViewItem ${item.css}`}
                           style={{
                             justifyContent: "flex-start",
-                            position: "relative"
+                            position: "relative",
                           }}
                         >
                           <span
                             style={{
                               flex: "0 1 auto",
-                              
-                              /* new */
-                              left: "50%",
-                              transform: "translateX(50%)",
+                              paddingLeft: "0.5rem",
                             }}
                           >
                             {item.name}
@@ -168,6 +165,7 @@ export const OngoingIssueView = () => {
                               marginLeft: "auto",
                               // transform: "translateX(-50%)",
                               fontSize: "0.7rem",
+                              paddingRight: "0.5rem",
                             }}
                           >
                             {item.metal}
@@ -443,6 +441,21 @@ const csltyApplicationData = [
     name: "CSLTYApp3",
     css: "issueViewGreen",
     metal: "Gold",
+  },
+  {
+    name: "CSLTYApp4",
+    css: "issueViewGreen",
+    metal: "Bronze",
+  },
+  {
+    name: "CSLTYApp5",
+    css: "issueViewGreen",
+    metal: "Bronze",
+  },
+  {
+    name: "CSLTYApp6",
+    css: "issueViewRed",
+    metal: "Bronze",
   },
 ];
 //Mule, Citrix, DataStage

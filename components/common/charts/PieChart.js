@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-export const PieChart = ({ series, cols }) => {
+export const PieChart = ({ series, cols , height}) => {
   const options = {
     labels: cols,
     legend: {
@@ -19,7 +19,7 @@ export const PieChart = ({ series, cols }) => {
       options={options}
       series={series}
       type="pie"
-      width={200}
+      // width={200}
       height={500}
     />
   );

@@ -20,10 +20,10 @@ export const Header = ({ setIsVisible }) => {
         }
       />
 
-      <Navbar data-bs-theme="light" fixed="top"
+      <Navbar data-bs-theme="dark" fixed="top"
       style={{
         //background opacity
-        backgroundColor: "rgba(255, 255, 255, 0.5)",
+        backgroundColor: "rgb(0,24,112)",
       }}>
         <Container>
           <Nav className="mr-auto">

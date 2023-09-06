@@ -19,21 +19,11 @@ const rowDataNamFL = [
     "nrw-yf738",
     "John Doe",
   ],
-  [
-    "INC23975644",
-    "P3",
-    "In Progress",
-    "FTP Job Failure",
-    "FLApp3",
-    "4",
-    "nrw-yhdfb",
-    "John Doe",
-  ],
 ];
 
 const rowDataNamCslty = [
   [
-    "INC23975624",
+    "INC24365837",
     "P1",
     "In Progress",
     "Server Down",
@@ -43,23 +33,13 @@ const rowDataNamCslty = [
     "John Doe",
   ],
   [
-    "INC23975634",
-    "P2",
+    "INC22674572",
+    "P1",
     "In Progress",
     "user unable to access",
     "CSLTYApp2",
     "3",
     "nrw-yf738",
-    "John Doe",
-  ],
-  [
-    "INC23975644",
-    "P3",
-    "In Progress",
-    "FTP Job Failure",
-    "CSLTYApp3",
-    "4",
-    "nrw-yhdfb",
     "John Doe",
   ],
 ];
@@ -165,6 +145,16 @@ export const incidentDataNamFL = {
 
 export const incidentDataNamCslty = {
   rowData: rowDataNamCslty,
+  cols: cols,
+  needsAttention: {
+    styleOn: 0,
+    checkCol: 1,
+    value: "P1",
+  },
+};
+
+export const incidentDataNam = {
+  rowData: rowDataNamFL.concat(rowDataNamCslty),
   cols: cols,
   needsAttention: {
     styleOn: 0,
