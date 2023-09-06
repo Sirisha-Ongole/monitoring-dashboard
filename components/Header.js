@@ -8,7 +8,7 @@ export const Header = ({ setIsVisible }) => {
   return (
     <>
       {/* Image: banner.png */}
-      <img
+      {/* <img
         src="banner.png"
         alt="banner"
         width="100%"
@@ -18,7 +18,7 @@ export const Header = ({ setIsVisible }) => {
             // filter: "blur(80px)",
           }
         }
-      />
+      /> */}
 
       <Navbar data-bs-theme="dark" fixed="top"
       style={{
