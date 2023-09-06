@@ -1,9 +1,8 @@
 import React from "react";
-import { NetworkStatus } from "../NetworkStatus";
-import { CustomCard } from "../StatOverviewBox2";
-import { randomizeArray } from "../../utils";
-import { RadialChartMultiple } from "../charts/RadialChartMultiple";
-import { DynamicLineChart } from "../charts/DynamicLineChart";
+import { NetworkStatus } from "./NetworkStatus";
+import { CustomCard } from "../../common/CustomCard";
+import { RadialChartMultiple } from "../../common/charts/RadialChartMultiple";
+import { DynamicLineChart } from "../../common/charts/DynamicLineChart";
 
 export const InfraSection = ({ title }) => {
   return (

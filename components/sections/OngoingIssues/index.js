@@ -1,8 +1,8 @@
 import React, { createRef, useEffect } from "react";
 import { useState } from "react";
-import { IncidentView } from "./IncidentView";
-import { incidentDataNam } from "../config/incident";
-import { DataTable } from "./common/DataTable";
+import { IncidentView } from "../../common/IncidentView";
+import { incidentDataNam } from "../../../config/incident";
+import { DataTable } from "../../common/DataTable";
 
 export const OngoingIssueView = () => {
   const [region, setRegion] = useState("NAM");

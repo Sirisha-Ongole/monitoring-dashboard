@@ -1,5 +1,5 @@
 import React from "react";
-import { DataTable } from "./common/DataTable";
+import { DataTable } from "./DataTable";
 
 export const IncidentView = ({ data = [] }) => {
   const tableClass = ["metricAndIncident"];

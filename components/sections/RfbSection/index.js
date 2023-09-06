@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
-import { PortfolioView } from "../PortfolioView";
-import { PortfolioSummary2 } from "../PortfolioSummary2";
-import { IncidentView } from "../IncidentView";
+import { PortfolioView } from "../../common/PortfolioView";
+import { PortfolioSummary2 } from "./PortfolioSummary";
+import { IncidentView } from "../../common/IncidentView";
 import {
   portfolioSummary,
   portfolioSummaryLatam,
@@ -11,16 +11,16 @@ import {
   portfolioViewNam,
   portfolioViewApac,
   portfolioSummaryApac,
-} from "../../config/portfolio";
+} from "../../../config/portfolio";
 import {
   incidentDataNam,
   incidentDataLatam,
   incidentDataApac,
   cols,
-} from "../../config/incident";
+} from "../../../config/incident";
 
 export const RfbSection = ({ rfbRegionSelected }) => {
-  const [showRfbPortfolioView, setShowRfbPortfolioView] = React.useState(false);
+  const [showMore, setShowMore] = React.useState(false);
   const [portfolioViewData, setPortfolioViewData] = React.useState([]);
   const [portfolioSummaryData, setPortfolioSummaryData] = React.useState([]);
   const [incidentData, setIncidentData] = React.useState([]);
@@ -39,7 +39,7 @@ export const RfbSection = ({ rfbRegionSelected }) => {
       setPortfolioSummaryData(portfolioSummaryApac);
       setIncidentData(incidentDataApac);
     }
-    setShowRfbPortfolioView(false);
+    setShowMore(false);
   }, [rfbRegionSelected]);
 
   return (
@@ -48,16 +48,16 @@ export const RfbSection = ({ rfbRegionSelected }) => {
         <div className="col-4">
           <PortfolioView
             data={portfolioViewData}
-            setShowRfbPortfolioView={setShowRfbPortfolioView}
+            setShowMore={setShowMore}
           />
         </div>
-        {showRfbPortfolioView && (
+        {showMore && (
           <div className="col-8">
             <PortfolioSummary2 data={portfolioSummaryData} />
           </div>
         )}
       </div>
-      {showRfbPortfolioView && (
+      {showMore && (
         <div className="row">
           <div className="col-12">
             <IncidentView data={incidentData} />

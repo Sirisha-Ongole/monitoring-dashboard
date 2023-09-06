@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { HexagonGrid } from "../common/HexagonGrid";
+import { HexagonGrid } from "../../common/HexagonGrid";
 import {
   appHygene,
   mttr,
   ongoingIssues,
   rfbData,
   infraData,
-} from "../../config/hexa-grid";
+} from "../../../config/hexa-grid";
 
 export const HexaGridsSection = ({
   setShowRfbView,

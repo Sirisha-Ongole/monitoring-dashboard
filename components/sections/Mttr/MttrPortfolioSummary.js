@@ -1,6 +1,6 @@
 import React from "react";
 
-import { DataTable } from "./common/DataTable";
+import { DataTable } from "../../common/DataTable";
 
 export const MttrPortfolioSummary = ({ data }) => {
   const tableStyle = {

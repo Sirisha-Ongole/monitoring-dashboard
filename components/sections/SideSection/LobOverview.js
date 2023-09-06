@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { DataTable } from "./common/DataTable";
-import { PieChart } from "./charts/PieChart";
+import { DataTable } from "../../common/DataTable";
+import { PieChart } from "../../common/charts/PieChart";
 
 export const LobOverview = () => {
   return (

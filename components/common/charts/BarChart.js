@@ -2,8 +2,28 @@ import dynamic from "next/dynamic";
 
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-export const BarChart = ({ data, title }) => {
+export const BarChart = ({ data, title, cols }) => {
   const series = [{ data }];
+
+  const options = {
+    labels: cols,
+    legend: {
+      show: false,
+      // position: "bottom",
+    },
+    plotOptions: {
+      bar: {
+        distributed: true,
+      },
+    },
+    xaxis: {
+      style: {
+        color: "white",
+      },
+    },
+    colors: colors,
+  };
+
   return (
     <>
       <p
@@ -37,22 +57,3 @@ const colors = [
   "#4B0082",
   "#8F00FF",
 ];
-
-const options = {
-  labels: ["Reservation", "Rating", "Quote", "Bind", "Book", "Issue"],
-  legend: {
-    show: false,
-    // position: "bottom",
-  },
-  plotOptions: {
-    bar: {
-      distributed: true,
-    },
-  },
-  xaxis: {
-    style: {
-      color: "white",
-    }
-  },
-  colors: colors,
-};

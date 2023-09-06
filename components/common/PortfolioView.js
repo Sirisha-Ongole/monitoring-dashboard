@@ -1,6 +1,6 @@
 import React from "react";
 
-export const PortfolioView = ({ data = [], setShowRfbPortfolioView }) => {
+export const PortfolioView = ({ data = [], setShowMore }) => {
   return (
     <div className="sectionBorder darkmode-background">
       <div className="row">
@@ -19,7 +19,7 @@ export const PortfolioView = ({ data = [], setShowRfbPortfolioView }) => {
                 cursor: "pointer",
               }}
               onClick={() => {
-                if (item.clickable) setShowRfbPortfolioView(true);
+                if (item.clickable) setShowMore(true);
               }}
             >
               <p className={"portfolioItem " + item.status}>{item.name}</p>

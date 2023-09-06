@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { PortfolioView } from "../PortfolioView";
+import { PortfolioView } from "../../common/PortfolioView";
 
-import { mttrPortfolioView, mttrportfolioSummary } from "../../config/portfolio";
-import { MttrPortfolioSummary } from "../MttrPortfolioSummary";
+import { mttrPortfolioView, mttrportfolioSummary } from "../../../config/portfolio";
+import { MttrPortfolioSummary } from "./MttrPortfolioSummary";
 
 export const MttrSection = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { DataTable } from "./common/DataTable";
+import { DataTable } from "../components/common/DataTable";
 
 export const ApplicationView = () => {
   const rowData = [

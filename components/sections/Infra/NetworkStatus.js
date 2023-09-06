@@ -1,6 +1,6 @@
 import React from "react";
-import { SparkChart } from "./charts/SparkChart";
-import { DynamicSparklines } from "./charts/DynamicSparklines";
+import { SparkChart } from "../../common/charts/SparkChart";
+import { DynamicSparklines } from "../../common/charts/DynamicSparklines";
 import dynamic from "next/dynamic";
 
 export const NetworkStatus = ({ sparklineData }) => {

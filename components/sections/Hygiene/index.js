@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { PortfolioView } from "../../PortfolioView";
-import { PortfolioSummary } from "../../PortfolioSummary";
+import { PortfolioView } from "../../common/PortfolioView";
+import { PortfolioSummary } from "./PortfolioSummary";
 
 import { hygienePortfolioView, portfolioSummary } from "../../../config/portfolio";
 

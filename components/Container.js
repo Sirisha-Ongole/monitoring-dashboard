@@ -3,13 +3,13 @@ import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 
 import { Header } from "./Header";
-import { OngoingIssueView } from "./OngoingIssueView";
-import { SideSectionHolder } from "./sections/SideSectionHolder";
-import { HexaGridsSection } from "./sections/HexaGridsSection";
+import { OngoingIssueView } from "./sections/OngoingIssues";
+import { SideSection } from "./sections/SideSection/SideSection";
+import { HexaGridsSection } from "./sections/HexaGrids";
 import { RfbSection } from "./sections/RfbSection";
-import { HygieneSection } from "./sections/HygieneSection";
-import { MttrSection } from "./sections/MttrSection";
-import { InfraSection } from "./sections/InfraSection";
+import { HygieneSection } from "./sections/Hygiene";
+import { MttrSection } from "./sections/Mttr";
+import { InfraSection } from "./sections/Infra";
 
 export const MainContainer = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -85,7 +85,7 @@ export const MainContainer = () => {
               </div>
               <div className="row">
                 <div className="col-2">
-                  <SideSectionHolder />
+                  <SideSection />
                 </div>
                 <div className="col-10">
                   {showRfbView && (
