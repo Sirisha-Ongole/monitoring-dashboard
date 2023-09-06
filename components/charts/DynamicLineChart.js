@@ -35,6 +35,21 @@ export const DynamicLineChart = () => {
         enabled: false,
       },
     },
+    tooltip: {
+      enabled: true,
+      x: {
+        show: true,
+        format: "dd MMM",
+        formatter: undefined,
+      },
+      y: {
+        formatter: undefined,
+        title: {
+          formatter: (seriesName) => seriesName,
+        },
+      },
+    },
+
     dataLabels: {
       enabled: false,
     },
@@ -42,7 +57,7 @@ export const DynamicLineChart = () => {
       curve: "smooth",
     },
     title: {
-      text: "Dynamic Updating Chart",
+      text: "Synthetic Monitoring - Response Times (ms)",
       align: "left",
     },
     markers: {

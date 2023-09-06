@@ -82,7 +82,7 @@ export const NetworkStatus = ({ sparklineData }) => {
                 key={index}
                 style={{
                   border: "1px solid grey",
-                  marginBottom: "0.3rem",
+                  marginBottom: "1rem",
                   padding: "1rem",
                   // shadow
                   boxShadow: "0 0 10px rgba(0,0,0,0.9)",
@@ -98,4 +98,4 @@ export const NetworkStatus = ({ sparklineData }) => {
   );
 };
 
-const dynamicSparklineTitles = ["Latency", "Throughput", "Bandwidth"];
+const dynamicSparklineTitles = ["Latency", "Throughput", "Bandwidth", "Speed"];

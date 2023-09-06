@@ -10,7 +10,7 @@ export const PortfolioSummary = ({ data }) => {
     "% of App compliance",
   ];
 
-  const onRowClick = () => {
+  const rowClick = () => {
     // show alert
     // navigate to state-of-union page in another tab
     window.open("state.html", "_blank", "noopener noreferrer");
@@ -47,7 +47,7 @@ export const PortfolioSummary = ({ data }) => {
             size={size}
             classes={classes}
             styles={styles}
-            onClicks={{ onRowClick }}
+            onClicks={{ rowClick }}
           />
         }
       </div>

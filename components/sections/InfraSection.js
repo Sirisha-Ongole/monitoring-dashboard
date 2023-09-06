@@ -53,6 +53,7 @@ const awsData = {
     { title: "ECS", status: "", withIssues: 1, total: 10 },
     { title: "RDS", status: "", withIssues: 1, total: 10 },
     { title: "EKS", status: "", withIssues: 1, total: 10 },
+    { title: "VMC", status: "", withIssues: 1, total: 10 },
   ],
 };
 
