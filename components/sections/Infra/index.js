@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NetworkStatus } from "./NetworkStatus";
 import { CustomCard } from "../../common/CustomCard";
 import { RadialChartMultiple } from "../../common/charts/RadialChartMultiple";
 import { DynamicLineChart } from "../../common/charts/DynamicLineChart";
 
 export const InfraSection = ({ title }) => {
+  // extract title from infraData
+  // const infraTitles = infraData.map((data) => data.title);
+
+  const [selectedProblemComponent, setSelectedProblemComponent] =
+    React.useState([]);
+
+  useEffect(() => {
+    const infraTitles = infraData.map((data) => {
+      return { title: data.title, selected: data.data.issues[0].title };
+    });
+    console.log(infraTitles);
+    setSelectedProblemComponent(infraTitles);
+  }, []);
+  
+  
   return (
     <>
       {infraData.map((data, index) => {
@@ -25,10 +40,17 @@ export const InfraSection = ({ title }) => {
             <div className="row">
               <div className="col-4">
                 <div className="row">
-                  <CustomCard cardData={data.data} />
+                  <CustomCard
+                    cardData={data.data}
+                    setSelected={setSelectedProblemComponent}
+                    selectionKey={data.title}
+                  />
                 </div>
                 <div className="row">
-                  <RadialChartMultiple />
+                  <RadialChartMultiple
+                    titles={selectedProblemComponent}
+                    selectionKey={data.title}
+                  />
                 </div>
                 <div className="row">
                   <DynamicLineChart id={data.title + "Chart"} />

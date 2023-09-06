@@ -5,10 +5,22 @@ import { useInterval } from "usehooks-ts";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 export const RadialChartMultiple = ({
-  title = "EC2",
+  titles,
   secondTitle = "XX.XX.XX.XX",
+  selectionKey,
 }) => {
   const [data, setData] = React.useState([44, 55, 67, 83]);
+  const [title, setTitle] = React.useState("");
+  useEffect(() => {
+    console.log(titles);
+    if (titles) {
+      titles.forEach((title) => {
+        if (title.title === selectionKey) {
+          setTitle(title.selected);
+        }
+      });
+    }
+  }, [titles, selectionKey]);
 
   useInterval(() => {
     // update the data using the randomizeArray function
@@ -16,7 +28,6 @@ export const RadialChartMultiple = ({
   }, 3000);
 
   var options = {
-    
     // show legend
     legend: {
       show: true,
