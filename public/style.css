@@ -5,7 +5,7 @@
 }
 
 .sectionBorder {
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.6);
   /* border-radius: var(--border-radius); */
   /* background-color: rgba(var(--callout-rgb), 0.5); */
   padding: 1rem;

@@ -27,7 +27,9 @@ export const CustomCard = ({ cardData }) => {
             <Row>
               {cardData.issues.map((issue, index) => {
                 return (
-                  <Col key={index} xs={2}>
+                  <Col key={index} xs={2} style={{
+                    marginRight: "1rem",
+                  }}>
                     <Row>
                       <Col
                         style={{
@@ -70,7 +72,10 @@ export const CustomCard = ({ cardData }) => {
               <Col
                 style={{
                   textAlign: "right",
-                  fontSize: "0.7rem",
+                  fontSize: "0.8rem",
+                  cursor: "pointer",
+                  color: "#888888",
+
                 }}
                 onClick={() => {
                   window.open("aws_console.html", "_blank", "noopener noreferrer");

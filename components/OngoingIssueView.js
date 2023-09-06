@@ -20,6 +20,11 @@ export const OngoingIssueView = () => {
     }
   }, [bundle]);
 
+  const boxTitleStyle = {
+    color: "black",
+    fontWeight: "bold",
+  };
+
   return (
     <div className="row">
       <div className="col-12">
@@ -49,7 +54,7 @@ export const OngoingIssueView = () => {
             <div className="issueViewRow">
               <div className="row">
                 <div className="col-10 issueViewHeading">
-                  <p>Bundle</p>
+                  <p style={boxTitleStyle}>Bundle</p>
                 </div>
               </div>
               <div className="row" style={{ display: "flex" }}>
@@ -81,7 +86,7 @@ export const OngoingIssueView = () => {
             <div className="issueViewRow">
               <div className="row">
                 <div className="col-10 issueViewHeading">
-                  <p>Business Function</p>
+                  <p style={boxTitleStyle}>Business Function</p>
                 </div>
               </div>
               <div className="row">
@@ -103,7 +108,7 @@ export const OngoingIssueView = () => {
             <div className="issueViewRow">
               <div className="row">
                 <div className="col-10 issueViewHeading">
-                  <p>Applications</p>
+                  <p style={boxTitleStyle}>Applications</p>
                 </div>
               </div>
               <div className="row">
@@ -130,7 +135,7 @@ export const OngoingIssueView = () => {
               <div className="issueViewRow col-6">
                 <div className="row">
                   <div className="col-10 issueViewHeading">
-                    <p>Infra Issues</p>
+                    <p style={boxTitleStyle}>Infra Issues</p>
                   </div>
                 </div>
                 <div className="row">
@@ -151,7 +156,7 @@ export const OngoingIssueView = () => {
               <div className="issueViewRow col-6">
                 <div className="row">
                   <div className="col-10 issueViewHeading">
-                    <p>Component-level Issues</p>
+                    <p style={boxTitleStyle}>Component-level Issues</p>
                   </div>
                 </div>
                 <div className="row">
@@ -180,11 +185,7 @@ export const OngoingIssueView = () => {
                   }}
                   size={size}
                   complexData={true}
-                  styles={{
-                    table: {
-                      border: "1px solid transparent",
-                    },
-                  }}
+                  
                 />
               </div>
             </div>

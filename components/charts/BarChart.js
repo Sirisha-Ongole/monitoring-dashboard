@@ -41,7 +41,8 @@ const colors = [
 const options = {
   labels: ["Reservation", "Rating", "Quote", "Bind", "Book", "Issue"],
   legend: {
-    position: "bottom",
+    show: false,
+    // position: "bottom",
   },
   plotOptions: {
     bar: {
