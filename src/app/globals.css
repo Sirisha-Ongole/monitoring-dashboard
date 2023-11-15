@@ -1,9 +1,9 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -38,6 +38,17 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+  --imperial-red: #f94144ff;
+  --orange-crayola: #f3722cff;
+  --carrot-orange: #f8961eff;
+  --coral: #f9844aff;
+  --saffron: #f9c74fff;
+  --pistachio: #90be6dff;
+  --zomp: #43aa8bff;
+  --dark-cyan: #4d908eff;
+  --paynes-gray: #577590ff;
+  --cerulean: #277da1ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -104,4 +115,9 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+@font-face {
+  font-family: "ChailceNoggin";
+  src: url("/fonts/ChailceNogginRegular-2OXoW.ttf");
 }

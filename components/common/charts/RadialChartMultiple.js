@@ -1,6 +1,7 @@
 import React, { use, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { useInterval } from "usehooks-ts";
+import { colors } from "./BarChart";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
@@ -33,6 +34,7 @@ export const RadialChartMultiple = ({
       show: true,
       position: "top",
     },
+    colors: colors,
     plotOptions: {
       radialBar: {
         dataLabels: {

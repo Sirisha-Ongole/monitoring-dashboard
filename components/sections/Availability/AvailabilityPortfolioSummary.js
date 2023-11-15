@@ -2,7 +2,7 @@ import React from "react";
 
 import { DataTable } from "../../common/DataTable";
 
-export const MttrPortfolioSummary = ({ data }) => {
+export const AvailabilityPortfolioSummary = ({ data }) => {
   const tableStyle = {
     marginBottom: "0.5rem",
     textAlign: "center",
@@ -11,8 +11,7 @@ export const MttrPortfolioSummary = ({ data }) => {
 
   const tableClass = ["metricAndIncident"];
 
-  const cols = ["Metal Tier", "MTTR"];
-  const title = "Application Count : 100";
+  const cols = ["Metal Tier", "Availability"];
 
   const rowClick = () => {
     // show alert
@@ -24,25 +23,34 @@ export const MttrPortfolioSummary = ({ data }) => {
     () => {
       // show alert
       // navigate to state-of-union page in another tab
-      window.open("kpi.html", "_blank", "noopener noreferrer");
+      window.open(
+        "availability-dashboard.html",
+        "_blank",
+        "noopener noreferrer"
+      );
     },
   ];
 
   return (
-    <div className="sectionBorder">
+    <div className="">
       <div className="row">
-        <div className="col">
-          <h5>Summary by Metal Tier</h5>
-        </div>
+        {/* <div className="col"> */}
+        <h5
+          style={{
+            marginTop: "1rem",
+          }}
+        >
+          Summary by Metal Tier
+        </h5>
+        {/* </div> */}
       </div>
       <div className="row">
         {
           <DataTable
             tableData={{
               cols,
-              title,
               rowData: data,
-              caption: ["KPI Metrics"],
+              caption: ["Avaiability Report"],
             }}
             size={size}
             classes={{ table: tableClass }}

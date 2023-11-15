@@ -5,7 +5,7 @@ import { RadialChartMultiple } from "../../common/charts/RadialChartMultiple";
 import { DynamicLineChart } from "../../common/charts/DynamicLineChart";
 import { DataTable } from "../../common/DataTable";
 import { PieChart } from "../../common/charts/PieChart";
-import { Col } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 export const InfraSection = ({ title }) => {
   // extract title from infraData
@@ -66,29 +66,49 @@ export const InfraSection = ({ title }) => {
     <>
       {infraData.map((data, index) => {
         return (
-          <div className="sectionBorder" key={index}>
+          <div
+            className="sectionBorder"
+            key={index}
+            style={{
+              backgroundColor: "#262c3f",
+              marginTop: "1rem",
+            }}
+          >
             <div className="row" key={index}>
               <div className="col-12">
-                <h3
+                <h4
                   style={{
                     textAlign: "center",
-                    marginTop: "1rem",
+                    // marginTop: "1rem",
                   }}
                 >
                   {data.title}
-                </h3>
+                </h4>
               </div>
             </div>
             <div className="row">
-              <div className="col-4">
+              <div
+                className="col-4"
+                style={{
+                  paddingLeft: "1rem",
+                }}
+              >
                 <div className="row">
                   <CustomCard
                     cardData={data.data}
+                    cardCaption = {data.caption}
                     setSelected={setSelectedProblemComponent}
                     selectionKey={data.title}
                   />
                 </div>
-                <div className="row">
+                <div
+                  className="row"
+                  style={{
+                    marginTop: "1rem",
+                    borderRadius: "0.5rem",
+                    backgroundColor: "#30384f",
+                  }}
+                >
                   <RadialChartMultiple
                     titles={selectedProblemComponent}
                     selectionKey={data.title}
@@ -104,21 +124,61 @@ export const InfraSection = ({ title }) => {
                   {/* <DynamicLineChart id={data.title + "Chart"} /> */}
                   <DataTable tableData={impactedApps} />
                   {/* <DataTable tableData={serverUtilization} /> */}
-                  <h5>Server Utilization</h5>
-                  <br />
-                  <Col
+                  <div
                     style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
+                      paddingTop: "1rem",
+                      borderRadius: "0.5rem",
+                      backgroundColor: "#30384f",
                     }}
                   >
-                    <PieChart
-                      series={[50, 40, 10, 10]}
-                      cols={["EC2", "RDS", "EKS", "VMC"]}
-                      height={200}
-                    />
-                  </Col>
+                    <h5>Service Utilization</h5>
+                    <br />
+                    <Col
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Row>
+                        <Col
+                          style={{
+                            marginBottom: "1.5rem",
+                          }}
+                        >
+                          <PieChart
+                            series={[70, 30]}
+                            cols={["EC2 - Utilized", "EC2 - Unutilized"]}
+                          />
+                        </Col>
+                        <Col>
+                          <PieChart
+                            series={[80, 20]}
+                            cols={["RDS - Utilized", "RDS - Unutilized"]}
+                          />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col
+                          style={{
+                            marginBottom: "1.5rem",
+                          }}
+                        >
+                          <PieChart
+                            series={[90, 10]}
+                            cols={["EKS - Utilized", "EKS - Unutilized"]}
+                          />
+                        </Col>
+
+                        <Col>
+                          <PieChart
+                            series={[60, 40]}
+                            cols={["ECS - Utilized", "ECS - Unutilized"]}
+                          />
+                        </Col>
+                      </Row>
+                    </Col>
+                  </div>
                 </div>
               </div>
               <div className="col-8">
@@ -146,7 +206,7 @@ const awsData = {
   issues: [
     { title: "EC2", status: "", withIssues: 1, total: 10 },
     { title: "ECS", status: "", withIssues: 1, total: 10 },
-    { title: "RDS", status: "", withIssues: 1, total: 10 },
+    { title: "RDS", status: "", withIssues: 0, total: 10 },
     { title: "EKS", status: "", withIssues: 1, total: 10 },
     { title: "VMC", status: "", withIssues: 1, total: 10 },
   ],
@@ -166,6 +226,10 @@ const infraData = [
   {
     title: "AWS",
     data: awsData,
+    caption:{
+      name: "AWS Observability Logs",
+      link: "aws_console.html"
+    }
   },
   {
     title: "On-Prem",

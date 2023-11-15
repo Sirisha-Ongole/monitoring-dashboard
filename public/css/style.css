@@ -1,0 +1,282 @@
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: var(--bs-navbar-active-color);
+  background-color: rgb(19, 82, 222);
+}
+
+.sectionBorder {
+  /* border: 1px solid rgba(var(--callout-border-rgb), 0.6); */
+  /* border-radius: var(--border-radius); */
+  /* background-color: rgba(var(--callout-rgb), 0.5); */
+  padding: 1rem;
+  /* margin-top: 0.5rem; */
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  
+}
+
+.hexGridHolder svg g {
+  /* fill: #48d71c; */
+  fill-opacity: 0.8;
+}
+.hexGridHolder svg g:hover {
+  cursor: pointer;
+  fill-opacity: 1;
+}
+/* .hexGridHolder svg g:hover text {
+  fill-opacity: 1;
+} */
+
+.hexGridHolder svg g polygon {
+  stroke: #48d71c;
+  stroke-width: 0;
+  transition: fill-opacity 0.2s;
+}
+.hexGridHolder svg g text {
+  font-size: 0.2em;
+  fill: black;
+  fill-opacity: 1;
+  transition: fill-opacity 0.2s;
+}
+.hexGridHolder svg path {
+  fill: none;
+  stroke: hsl(60, 20%, 70%);
+  stroke-width: 0.4em;
+  stroke-opacity: 0.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hexGridHolder svg .TITLE g text {
+  font-size: 0.2em;
+  fill: black;
+  fill-opacity: 1;
+  transition: fill-opacity 0.2s;
+  color: black;
+}
+
+text {
+  fill: white !important;
+}
+
+.RED g {
+  fill: rgb(128, 0, 0) !important;
+}
+
+.GREEN g {
+  fill: rgb(71, 189, 77) !important;
+}
+
+.AMBER g {
+  fill: rgb(255, 191, 10) !important;
+}
+
+.TITLE g {
+  fill: transparent !important;
+  fill-opacity: 1 !important;
+}
+
+/* Font size of elements inside <table> to 1em */
+table {
+  font-size: 0.7rem;
+}
+
+.portfolioHeader {
+  /* background-color: #4287f5; */
+  /* color: white; */
+  text-align: center;
+  /* border: 1px solid; */
+  margin-bottom: 1rem;
+}
+
+.portfolioItem {
+  color: white;
+  font-size: 0.6rem;
+  text-align: center;
+  padding: 0.2rem;
+  width: 100%;
+  /* border: 1px solid black; */
+  margin-bottom: 0.7rem;
+  border-radius: 0.5rem;
+}
+
+.portfolioRed {
+  /* background-color: red; */
+  /* opacity: 0.7; */
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.portfolioGreen {
+  background-color: rgba(126, 165, 47, 0.7);
+}
+
+.appViewRed {
+  background-color: rgba(255, 0, 0, 0.7) !important;
+}
+
+.appViewGreen {
+  background-color: rgba(126, 165, 47, 0.6) !important;
+}
+
+.issueViewRed {
+  background-color: rgba(128, 0, 0, 0.7) !important;
+}
+
+.issueViewRed:hover {
+  cursor: pointer;
+  background-color: rgba(128, 0, 0, 1) !important;
+}
+
+.issueViewGreen {
+  background-color: rgb(71, 189, 77, 0.7) !important;
+}
+
+.issueViewGreen:hover {
+  cursor: pointer;
+  background-color: rgba(71, 189, 77, 1) !important;
+}
+
+.issueViewItem {
+  text-align: center;
+  /* padding: 0.2rem; */
+  /* margin: 0.2rem; */
+  /* border: 1px solid black; */
+  border-radius: 0.5rem;
+  margin-top: 0.4rem !important;
+  font-size: 1.3rem;
+  /* margin-left: 1.5rem; */
+  /* margin-bottom: 0.7rem; */
+}
+
+.issueViewRow {
+  /* Dashed square border */
+  margin-top: 0.7rem !important;
+  /* border: 1px dashed grey; */
+  padding: 0.2rem;
+  background-color: #262c3f;
+  border-radius: 0.5rem;
+}
+
+.selected {
+  /* opacity to 1 */
+  opacity: 1 !important;
+}
+
+.issueViewHeading {
+  /* Centre the text inside */
+  text-align: center;
+  /* background-color: rgb(8, 167, 220); */
+  background-color: lightblue;
+  /* Centre */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.metricAndIncident thead tr th {
+  /* Centre the text inside */
+  text-align: center;
+  /* background-color: lightblue; */
+  /* Centre */
+  margin-left: auto;
+  margin-right: auto;
+  color: blue;
+  /* text-decoration-color: white; */
+}
+.metricAndIncident {
+  /* border: 1px solid black; */
+}
+
+.RED {
+  background-color: red !important;
+}
+
+.GREEN {
+  background-color: green !important;
+}
+
+.AMBER {
+  background-color: orange !important;
+}
+
+.box {
+  /* float: right; */
+  margin-left: auto;
+  margin-right: auto;
+  height: 20px;
+  width: 20px;
+  /* margin-bottom: 15px; */
+  /* border: 1px solid black; */
+  clear: both;
+  /* center */
+}
+
+.dottedLine {
+  border-bottom: 1px dashed grey;
+  padding-left: 0px;
+}
+
+.statBoxOutline {
+  /* border: 1px solid grey; */
+  padding: 0.2rem;
+  margin-top: 0.4rem !important;
+  background-color: lightgrey;
+}
+.statBoxTitle {
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+}
+
+.statBoxIssue {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: red;
+}
+
+.statBoxIssue:hover {
+  cursor: pointer;
+  color: darkred;
+}
+
+.statBoxTotal {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.statBoxIssueTitle {
+  font-size: 1rem;
+  /* font-weight: bold; */
+  text-align: right;
+  /* color: red; */
+}
+
+.darkmode-background {
+  background-color: #262c3f !important;
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: #151a2c !important;
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+  border-top: none;
+}
+
+.table > tbody > tr,
+.table > thead > tr {
+  border-style: hidden;
+}

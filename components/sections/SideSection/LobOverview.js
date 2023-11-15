@@ -7,12 +7,12 @@ export const LobOverview = () => {
   return (
     <div className="sectionBorder darkmode-background" style={{ marginTop: "1rem" }}>
       {/* <DataTable tableData={tableData} /> */}
-      <p
+      <h5
         style={{
           textAlign: "center",
-          fontWeight: "bold",
+          // fontWeight: "bold",
         }}
-      >GI Applications Landscape</p>
+      >GI Applications Landscape</h5>
       <PieChart
         series={[600, 100, 200, 200, 100]}
         cols={["NAM", "LATAM", "Japan", "EMEA", "China"]}

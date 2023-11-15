@@ -8,7 +8,9 @@ export const SideSection = () => {
   return (
     <>
       <LobOverview />
-      <div className="darkmode-background">
+      <div className="darkmode-background" style={{
+        borderRadius: "0.5rem",
+      }}>
         <div
           className="sectionBorder"
           style={{

@@ -26,14 +26,14 @@ export const BarChart = ({ data, title, cols }) => {
 
   return (
     <>
-      <p
+      <h5
         style={{
           textAlign: "center",
-          fontWeight: "bold",
+          // fontWeight: "bold",
         }}
       >
         {title}
-      </p>
+      </h5>
 
       <ApexChart
         options={options}
@@ -48,12 +48,13 @@ export const BarChart = ({ data, title, cols }) => {
 };
 
 //Rainbow colors
-const colors = [
-  "#FF0000",
-  "#FF7F00",
-  "#FFBF00",
-  "#008000",
-  "#0000FF",
-  "#4B0082",
-  "#8F00FF",
+export const colors = [
+  "#47bd4d", //green
+  "#800000", //red
+  "#ffbf0a", //yellow
+  "#FF7F00", //orange
+
+  "#0000FF", //blue
+  "#4B0082", //indigo
+  "#8F00FF", //violet
 ];

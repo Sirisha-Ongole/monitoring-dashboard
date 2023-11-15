@@ -17,12 +17,22 @@ export const DataTable = ({
     color: "black",
   };
 
-  const rowStyle = { textAlign: "center" };
+  const rowStyle = { textAlign: "center", backgroundColor: "#30384f" };
 
   const headStyle = {
     textAlign: "center",
-    backgroundColor: "lightblue",
-    color: "black",
+    backgroundColor: "#444f6f",
+    color: "white",
+  };
+
+  const captionStyle = {
+    textAlign: "right",
+    fontSize: "0.6rem",
+    paddingBottom: "0rem",
+    marginBottom: "0.2rem",
+    cursor: "pointer",
+    marginLeft: "0.5rem",
+    display: "inline",
   };
 
   const footerStyle = { fontWeight: "bold", textAlign: "center" };
@@ -31,16 +41,48 @@ export const DataTable = ({
     <>
       {tableData && (
         <div className={needsectionBorder ? "sectionBorder" : ""}>
+          { (
+            <h6
+              style={{
+                textAlign: "center",
+                // fontWeight: "bold",
+              }}
+            >
+              {tableData.title}
+              {tableData.caption && (
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  {tableData.caption.map((caption, index) => (
+                    <p
+                      key={index}
+                      style={
+                        styles.captionStyle ? styles.captionStyle : captionStyle
+                      }
+                      onClick={onClicks.captionClick[index]}
+                    >
+                      {caption}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </h6>
+          )}
+
+          <></>
           <Table
             striped
-            bordered
+            // bordered
             hover
             size={size}
             className={classes.table && classes.table.join(" ")}
             style={styles.table}
           >
             <thead>
-              <tr>
+              {/* <tr>
                 {tableData.title && (
                   <th
                     colSpan={
@@ -58,7 +100,7 @@ export const DataTable = ({
                     {tableData.title}
                   </th>
                 )}
-              </tr>
+              </tr> */}
               <tr>
                 {tableData.cols &&
                   tableData.cols.map((col) => (
@@ -96,19 +138,15 @@ export const DataTable = ({
                               tableData.needsAttention.value
                               ? styles.needsAttention
                                 ? styles.needsAttention
-                                : { 
+                                : {
                                     // flasing red
                                     animation: "blinker 1s linear infinite",
                                     backgroundColor: "red",
-
-
-
-                                 }
+                                  }
                               : styles.rowStyle
                               ? styles.rowStyle
                               : rowStyle
                           }
-                          
                         >
                           {col}
                         </td>

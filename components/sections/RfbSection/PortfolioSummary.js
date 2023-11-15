@@ -15,8 +15,8 @@ export const PortfolioSummary2 = ({ data }) => {
       {
         <div className="sectionBorder darkmode-background">
           <div className="row">
-            <div className="col portfolioHeader">
-              <p>{data.title}</p>
+            <div className="col">
+              <h5>{data.title}</h5>
             </div>
           </div>
           <div className="row">

@@ -10,6 +10,7 @@ import { RfbSection } from "./sections/RfbSection";
 import { HygieneSection } from "./sections/Hygiene";
 import { MttrSection } from "./sections/Mttr";
 import { InfraSection } from "./sections/Infra";
+import { AvailabilitySection } from "./sections/Availability";
 
 export const MainContainer = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -18,6 +19,7 @@ export const MainContainer = () => {
   const [showHygieneView, setShowHygieneView] = React.useState(false);
   const [showMttrView, setShowMttrView] = React.useState(false);
   const [showInfraView, setShowInfraView] = React.useState(false);
+  const [showAvailabilityView, setShowAvailabilityView] = React.useState(false);
 
   const [rfbRegionSelected, updateRfbRegionSelected] = React.useState(null);
 
@@ -27,30 +29,42 @@ export const MainContainer = () => {
       setShowHygieneView(false);
       setShowMttrView(false);
       setShowInfraView(false);
+      setShowAvailabilityView(false);
     }
     if (showIssueView) {
       setShowRfbView(false);
       setShowHygieneView(false);
       setShowMttrView(false);
       setShowInfraView(false);
+      setShowAvailabilityView(false);
     }
     if (showHygieneView) {
       setShowRfbView(false);
       setShowIssueView(false);
       setShowMttrView(false);
       setShowInfraView(false);
+      setShowAvailabilityView(false);
     }
     if (showMttrView) {
       setShowRfbView(false);
       setShowIssueView(false);
       setShowHygieneView(false);
       setShowInfraView(false);
+      setShowAvailabilityView(false);
     }
     if (showInfraView) {
       setShowRfbView(false);
       setShowIssueView(false);
       setShowHygieneView(false);
       setShowMttrView(false);
+      setShowAvailabilityView(false);
+    }
+    if (showAvailabilityView) {
+      setShowRfbView(false);
+      setShowIssueView(false);
+      setShowHygieneView(false);
+      setShowMttrView(false);
+      setShowInfraView(false);
     }
   }, [
     showRfbView,
@@ -58,6 +72,7 @@ export const MainContainer = () => {
     showHygieneView,
     showMttrView,
     showInfraView,
+    showAvailabilityView,
   ]);
 
   return (
@@ -66,12 +81,14 @@ export const MainContainer = () => {
       style={{
         fontFamily: "DM Sans-Bold, Helvetica",
       }}
-      
     >
       <Header setIsVisible={setIsVisible} />
-      <div className="row" style={{
-        paddingTop: "80px",
-      }}>
+      <div
+        className="row"
+        style={{
+          paddingTop: "80px",
+        }}
+      >
         <div className="col-12">
           {isVisible && (
             <>
@@ -82,6 +99,7 @@ export const MainContainer = () => {
                   setShowHygieneView={setShowHygieneView}
                   setShowMttrView={setShowMttrView}
                   setShowInfraView={setShowInfraView}
+                  setShowAvailabilityView={setShowAvailabilityView}
                   updateRfbRegionSelected={updateRfbRegionSelected}
                 />
               </div>
@@ -97,6 +115,7 @@ export const MainContainer = () => {
                   {showHygieneView && <HygieneSection />}
                   {showIssueView && <OngoingIssueView />}
                   {showMttrView && <MttrSection />}
+                  {showAvailabilityView && <AvailabilitySection />}
                 </div>
               </div>
             </>

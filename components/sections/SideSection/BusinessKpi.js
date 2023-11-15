@@ -10,14 +10,14 @@ export const BusinessKpi = ({ discrepanciesData }) => {
         fontSize: "0.8rem",
       }}
     >
-      <h4
+      <h5
         style={{
           textAlign: "center",
-          fontWeight: "bold",
+          // fontWeight: "bold",
         }}
       >
         Business KPI
-      </h4>
+      </h5>
 
       <DataTable
         needsectionBorder={false}
@@ -43,7 +43,7 @@ export const BusinessKpi = ({ discrepanciesData }) => {
             }}
           >
             {" "}
-            Issues vs Delivered:
+            Issued vs Delivered:
           </p>
         </div>
         <div className="col-4">-0.25%</div>
@@ -55,7 +55,7 @@ export const BusinessKpi = ({ discrepanciesData }) => {
               fontWeight: "bold",
             }}
           >
-            Issues vs Booked:
+            Issued vs Booked:
           </p>
         </div>
         <div className="col-4">-5%</div>

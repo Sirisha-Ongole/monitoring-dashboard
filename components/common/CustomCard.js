@@ -2,7 +2,12 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Col, Card, Row } from "react-bootstrap";
 
-export const CustomCard = ({ cardData, setSelected, selectionKey }) => {
+export const CustomCard = ({
+  cardData,
+  cardCaption,
+  setSelected,
+  selectionKey,
+}) => {
   return (
     <>
       {cardData && cardData.issues && cardData.issues.length > 0 && (
@@ -10,19 +15,22 @@ export const CustomCard = ({ cardData, setSelected, selectionKey }) => {
           <div
             style={{
               color: "white",
+              paddingTop: "1rem",
               paddingBottom: "0px !important",
-              padding: "3rem",
+              // padding: "3rem",
             }}
             className=""
           >
             <Row>
-              <p
-                style={{
-                  fontSize: "1.3rem",
-                }}
+              <h5
+                style={
+                  {
+                    // fontSize: "1.3rem",
+                  }
+                }
               >
                 {cardData.title}
-              </p>
+              </h5>
             </Row>
             <Row>
               {cardData.issues.map((issue, index) => {
@@ -31,7 +39,7 @@ export const CustomCard = ({ cardData, setSelected, selectionKey }) => {
                     key={index}
                     xs={2}
                     style={{
-                      marginRight: "1rem",
+                      marginRight: "0rem",
                       cursor: "pointer",
                     }}
                     onClick={() => {
@@ -85,24 +93,29 @@ export const CustomCard = ({ cardData, setSelected, selectionKey }) => {
                 );
               })}
             </Row>
-            <Row style={{}}>
-              <Col
-                style={{
-                  textAlign: "right",
-                  fontSize: "0.8rem",
-                  cursor: "pointer",
-                  color: "#888888",
-                }}
-                onClick={() => {
-                  window.open(
-                    "aws_console.html",
-                    "_blank",
-                    "noopener noreferrer"
-                  );
-                }}
-              >
-                AWS Observability Logs
-              </Col>
+
+            <Row style={{ marginTop: "1rem", marginBottom: "0.5rem" }}>
+              <>
+                {cardCaption && (
+                  <Col
+                    style={{
+                      textAlign: "right",
+                      fontSize: "0.8rem",
+                      cursor: "pointer",
+                      color: "#888888",
+                    }}
+                    onClick={() => {
+                      window.open(
+                        cardCaption.link,
+                        "_blank",
+                        "noopener noreferrer"
+                      );
+                    }}
+                  >
+                    {cardCaption.name}
+                  </Col>
+                )}
+              </>
             </Row>
           </div>
         </div>

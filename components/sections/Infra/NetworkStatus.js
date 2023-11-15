@@ -21,13 +21,13 @@ export const NetworkStatus = ({ sparklineData }) => {
             paddingRight: "0px",
           }}
         >
-          <p
+          <h5
             style={{
-              fontSize: "1.3rem",
+              // fontSize: "1.3rem",
             }}
           >
             Network Performance - US East
-          </p>
+          </h5>
         </div>
         <div
           className="col-8"

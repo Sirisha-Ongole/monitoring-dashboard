@@ -3,7 +3,7 @@ export const rfbData = {
   data: [
     {
       name: "NAM",
-      status: "GREEN",
+      status: "RED",
       position: {
         q: -1,
         r: 0,
@@ -63,10 +63,11 @@ export const rfbData = {
 
 export const infraData = {
   title: "Infrastructure Health",
+  shortTitle: "Infra Health",
   data: [
     {
       name: "NAM",
-      status: "GREEN",
+      status: "RED",
       position: {
         q: -1,
         r: 0,
@@ -187,11 +188,12 @@ export const ongoingIssues = {
 };
 
 export const appHygene = {
-  title: "App Hygiene",
+  title: "Application Hygiene",
+  shortTitle: "App Hygiene",
   data: [
     {
       name: "NAM - 90%",
-      status: "RED",
+      status: "AMBER",
       position: {
         q: -1,
         r: 0,
@@ -250,6 +252,9 @@ export const appHygene = {
 
 export const mttr = {
   title: "MTTR - 98hrs",
+  caption: {
+    name: "*Current month",
+  },
   data: [
     {
       name: "NAM - 110 hrs",
@@ -300,6 +305,71 @@ export const mttr = {
     },
     {
       name: "EMEA - 99 hrs",
+      status: "GREEN",
+      position: {
+        q: 0,
+        r: 1,
+        s: -1,
+      },
+    },
+  ],
+};
+export const availability = {
+  title: "Application Availability",
+  shortTitle: "App Availability",
+  caption: {
+    name: "*Current month",
+  },
+  data: [
+    {
+      name: "NAM - 99.8%",
+      status: "GREEN",
+      position: {
+        q: -1,
+        r: 0,
+        s: 1,
+      },
+      clickable: true,
+    },
+    {
+      name: "LATAM - 99.7%",
+      status: "GREEN",
+      position: {
+        q: 0,
+        r: -1,
+        s: 1,
+      },
+      clickable: false,
+    },
+    {
+      name: "JAPAN - 99.7%",
+      status: "GREEN",
+      position: {
+        q: 1,
+        r: -1,
+        s: 0,
+      },
+    },
+    {
+      name: "GERMANY - 99.6%",
+      status: "GREEN",
+      position: {
+        q: 1,
+        r: 0,
+        s: -1,
+      },
+    },
+    {
+      name: "APAC - 99.9%",
+      status: "GREEN",
+      position: {
+        q: -1,
+        r: 1,
+        s: 0,
+      },
+    },
+    {
+      name: "EMEA - 99.6%",
       status: "GREEN",
       position: {
         q: 0,

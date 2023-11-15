@@ -13,8 +13,16 @@ export const PortfolioSummary = ({ data }) => {
   const rowClick = () => {
     // show alert
     // navigate to state-of-union page in another tab
-    window.open("state.html", "_blank", "noopener noreferrer");
+    window.open("app_hygiene.html", "_blank", "noopener noreferrer");
   };
+
+  const captionClicks = [
+    () => {
+      // show alert
+      // navigate to state-of-union page in another tab
+      window.open("app_hygiene.html", "_blank", "noopener noreferrer");
+    },
+  ];
 
   const size = "sm";
 
@@ -27,13 +35,16 @@ export const PortfolioSummary = ({ data }) => {
       marginBottom: "0.5rem",
       textAlign: "center",
     },
+    rowClick: {
+      cursor: "pointer",
+    },
   };
 
   return (
     <div className="sectionBorder">
       <div className="row">
-        <div className="col portfolioHeader">
-          <p>Summary by Metal Tier</p>
+        <div className="col">
+          <h5>Summary by Metal Tier</h5>
         </div>
       </div>
       <div className="row">
@@ -43,11 +54,12 @@ export const PortfolioSummary = ({ data }) => {
               cols,
               rowData: data,
               title: "Application Count : 100",
+              caption: ["App Hygiene Dashboard"],
             }}
             size={size}
             classes={classes}
             styles={styles}
-            onClicks={{ rowClick }}
+            onClicks={{ rowClick, captionClick: captionClicks }}
           />
         }
       </div>

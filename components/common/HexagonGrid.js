@@ -12,7 +12,7 @@ export const HexagonGrid = ({ gridData, setShowView, updateSelected }) => {
     const hexGridHeight = hexGrid.clientHeight;
     const hexGridRatio = hexGridWidth / hexGridHeight;
     const viewBoxWidth = 300;
-    const viewBoxHeight = 130;
+    const viewBoxHeight = 120;
     const viewBoxRatio = viewBoxWidth / viewBoxHeight;
 
     const offset = -0.04 * viewBoxWidth * hexGridRatio;
@@ -34,11 +34,12 @@ export const HexagonGrid = ({ gridData, setShowView, updateSelected }) => {
     <div
       className="hexGridHolder"
       style={{
-        backgroundColor: "rgb(49,49,51)",
-        border: "1px solid rgba(var(--callout-border-rgb), 0.3)",
+        backgroundColor: "#262C3F",
+        // border: "1px solid rgba(var(--callout-border-rgb), 0.3)",
         textAlign: "center",
         marginTop: "0.5rem",
-        
+        borderRadius: "0.5rem",
+        minHeight: "350px",
       }}
     >
       <h5
@@ -48,10 +49,13 @@ export const HexagonGrid = ({ gridData, setShowView, updateSelected }) => {
       >
         {gridData.title}
       </h5>
-      <HexGrid width={250} height={330} viewBox={viewBox}>
+
+      <HexGrid width={250} height={290} viewBox={viewBox}>
         <Layout size={{ x: 15, y: 15 }} spacing={1.1}>
           <Hexagon q={0} r={0} s={0} className="TITLE">
-            <Text>{gridData.title}</Text>
+            <Text>
+              {gridData.shortTitle ? gridData.shortTitle : gridData.title}
+            </Text>
           </Hexagon>
           {gridData.data.map((item) => {
             return (
@@ -75,6 +79,18 @@ export const HexagonGrid = ({ gridData, setShowView, updateSelected }) => {
           })}
         </Layout>
       </HexGrid>
+      <div
+        style={{
+          fontSize: "0.6rem",
+          color: "white",
+          textAlign: "right",
+          paddingRight: "0.5rem",
+          // paddingBottom: "0.5rem",
+          fontStyle: "italic",
+        }}
+      >
+        <>{gridData.caption ? gridData.caption.name : ""}</>
+      </div>
     </div>
   );
 };

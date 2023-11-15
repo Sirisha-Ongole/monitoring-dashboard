@@ -26,23 +26,54 @@ export const OngoingIssueView = () => {
     }
   }, [bundle]);
 
+  // const boxTitleStyle = {
+  //   color: "black",
+  //   fontWeight: "bold",
+  //   fontSize: "1.5rem",
+  //   marginBottom: "0",
+  // };
   const boxTitleStyle = {
-    color: "black",
-    fontWeight: "bold",
-    fontSize: "1.5rem",
-    marginBottom: "0",
+    paddingLeft: "1rem",
+    paddingTop: "0.2rem",
   };
 
+  const boxContentRowStyle = {
+    justifyContent: "center",
+    paddingRight: "1rem",
+    paddingLeft: "1rem",
+  };
+
+  const captionClicks = [
+    () => {
+      // show alert
+      // navigate to state-of-union page in another tab
+      window.open("it-incident.html", "_blank", "noopener noreferrer");
+    },
+  ];
+
   return (
-    <div className="row">
-      <div className="col-12">
-        <h3
+    <div
+      className="row"
+      style={{
+        marginTop: "1rem",
+      }}
+    >
+      <div
+        className="col-12"
+        style={{
+          borderRadius: "0.5rem",
+          backgroundColor: "rgb(38, 44, 63)",
+          // border: "1px solid #ccc",
+        }}
+      >
+        <h4
           style={{
+            marginTop: "1rem",
             textAlign: "center",
           }}
         >
           P1/P2 Issues View
-        </h3>
+        </h4>
         {/* <div className="row">
         {regionData.map((item, index) => {
           return (
@@ -67,14 +98,24 @@ export const OngoingIssueView = () => {
           <>
             <div className="issueViewRow">
               <div className="row">
-                <div className="col-2 issueViewHeading">
-                  <p style={boxTitleStyle}>Bundle</p>
+                <div className="col-2" style={boxTitleStyle}>
+                  <h5
+                  // style={boxTitleStyle}
+                  >
+                    Bundle
+                  </h5>
+                </div>
+                <div
+                  className="col-10"
+                  style={{
+                    paddingLeft: "0px",
+                  }}
+                >
+                  {/* Dotted line */}
+                  <hr className="dottedLine" />
                 </div>
               </div>
-              <div
-                className="row"
-                style={{ display: "flex", justifyContent: "center" }}
-              >
+              <div className={"row " + boxContentRowStyle}>
                 {bundleData.map((item, index) => {
                   return (
                     <div
@@ -100,18 +141,29 @@ export const OngoingIssueView = () => {
         )}
         {bundle !== "" && (
           <>
-            <div className="issueViewRow">
+            <div
+              className=""
+              style={{
+                // borderTop: "0.5px dashed #d3d3d3",
+                paddingTop: "1rem",
+              }}
+            >
               <div className="row">
-                <div className="col-4 issueViewHeading">
-                  <p style={boxTitleStyle}>Business Function Impact</p>
+                <div className="col-2" style={boxTitleStyle}>
+                  <h5>Business Function</h5>
+                </div>
+                <div
+                  className="col-10"
+                  style={{
+                    paddingLeft: "0px",
+                  }}
+                >
+                  {/* Dotted line */}
+                  <hr className="dottedLine" />
                 </div>
               </div>
-              <div
-                className="row"
-                style={{
-                  justifyContent: "center",
-                }}
-              >
+              <div className={"row " + boxContentRowStyle}>
+                {/* <div className="col-11"> */}
                 {data.businessFunctionData &&
                   data.businessFunctionData.map((item, index) => {
                     return (
@@ -124,21 +176,32 @@ export const OngoingIssueView = () => {
                       </div>
                     );
                   })}
+                {/* </div> */}
               </div>
             </div>
 
-            <div className="issueViewRow">
+            <div
+              className=""
+              style={{
+                // borderTop: "0.5px dashed #d3d3d3",
+                paddingTop: "1rem",
+              }}
+            >
               <div className="row">
-                <div className="col-2 issueViewHeading">
-                  <p style={boxTitleStyle}>Applications</p>
+                <div className="col-2" style={boxTitleStyle}>
+                  <h5>Applications</h5>
+                </div>
+                <div
+                  className="col-10"
+                  style={{
+                    paddingLeft: "0px",
+                  }}
+                >
+                  {/* Dotted line */}
+                  <hr className="dottedLine" />
                 </div>
               </div>
-              <div
-                className="row"
-                style={{
-                  justifyContent: "center",
-                }}
-              >
+              <div className={"row " + boxContentRowStyle}>
                 {data.appData &&
                   data.appData.map((item, index) => {
                     return (
@@ -176,57 +239,93 @@ export const OngoingIssueView = () => {
                   })}
               </div>
             </div>
-            <div className="row">
-              <div className="issueViewRow col-6">
-                <div className="row">
-                  <div className="col-5 issueViewHeading">
-                    <p style={boxTitleStyle}>Infrastructure Issues</p>
+            <div
+              style={
+                {
+                  // padding: "0.2rem",
+                }
+              }
+            >
+              <div
+                className="row"
+                style={{
+                  marginTop: "1rem",
+                  // borderTop: "0.5px dashed #d3d3d3",
+                  padding: "1rem",
+                }}
+              >
+                <div
+                  className=" col"
+                  style={{
+                    borderRadius: "0.5rem",
+                    backgroundColor: "#303750",
+                    marginRight: "0.5rem",
+                  }}
+                >
+                  <div className="row">
+                    <div className="col-4" style={boxTitleStyle}>
+                      <h5>Platform Issues</h5>
+                    </div>
+                    <div
+                      className="col-8"
+                      style={{
+                        paddingLeft: "0px",
+                      }}
+                    >
+                      {/* Dotted line */}
+                      <hr className="dottedLine" />
+                    </div>
+                  </div>
+                  <div className={"row " + boxContentRowStyle}>
+                    {data.infraData &&
+                      data.infraData.map((item, index) => {
+                        return (
+                          <div key={index} className="col-4">
+                            <div>
+                              <p className={` issueViewItem ${item.css}`}>
+                                {item.name}
+                              </p>
+                            </div>
+                          </div>
+                        );
+                      })}
                   </div>
                 </div>
                 <div
-                  className="row"
+                  className="col"
                   style={{
-                    justifyContent: "center",
+                    borderRadius: "0.5rem",
+                    backgroundColor: "#303750",
                   }}
                 >
-                  {data.infraData &&
-                    data.infraData.map((item, index) => {
-                      return (
-                        <div key={index} className="col-3">
-                          <div>
-                            <p className={` issueViewItem ${item.css}`}>
-                              {item.name}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                </div>
-              </div>
-              <div className="issueViewRow col-6">
-                <div className="row">
-                  <div className="col-5 issueViewHeading">
-                    <p style={boxTitleStyle}>Component Issues</p>
+                  <div className="row">
+                    <div className="col-4" style={boxTitleStyle}>
+                      <h5>Component Issues</h5>
+                    </div>
+                    <div
+                      className="col-8"
+                      style={{
+                        paddingLeft: "0px",
+                      }}
+                    >
+                      {/* Dotted line */}
+                      <hr className="dottedLine" />
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="row"
-                  style={{
-                    justifyContent: "center",
-                  }}
-                >
-                  {data.serverData &&
-                    data.serverData.map((item, index) => {
-                      return (
-                        <div key={index} className="col-3">
-                          <div>
-                            <p className={` issueViewItem ${item.css}`}>
-                              {item.name}
-                            </p>
+                  <div className={"row " + boxContentRowStyle}>
+                    {data.serverData &&
+                      data.serverData.map((item, index) => {
+                        return (
+                          <div key={index} className="col-4">
+                            <div>
+                              <p className={` issueViewItem ${item.css}`}>
+                                {item.name}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -265,16 +364,24 @@ export const OngoingIssueView = () => {
             </div>
             <div
               className="row"
-              style={{
-                marginTop: "1rem",
-              }}
+              style={
+                {
+                  // marginTop: "1rem",
+                }
+              }
             >
-              <div className="col"></div>
-              <div className="row">
-                <div className="col-12">
-                  <IncidentView data={incidentData} />
-                </div>
+              {/* <div className="col"></div> */}
+              {/* <div className="row"> */}
+              <div className="col-12">
+                <IncidentView
+                  data={incidentData}
+                  caption={{
+                    text: ["IT Incident portal"],
+                    captionClick: captionClicks,
+                  }}
+                />
               </div>
+              {/* </div> */}
             </div>
           </>
         )}
@@ -292,14 +399,14 @@ const metricsRowData = [
     "Application Performance",
     '<div class="box  AMBER"></div>',
     '<div class="box  GREEN"></div>',
-    "https://www.google.com",
+    "https://dynatrace.com",
     "Check the logs",
   ],
   [
     "Application Utilization",
     '<div class="box  GREEN"></div>',
     '<div class="box  GREEN"></div>',
-    "https://www.google.com",
+    "https://logview.net",
     "-",
   ],
 
@@ -308,7 +415,7 @@ const metricsRowData = [
     '<div class="box  GREEN"></div>',
     '<div class="box  GREEN"></div>',
 
-    "https://www.google.com",
+    "https://cloudwatch.com",
     "-",
   ],
   [
@@ -316,7 +423,7 @@ const metricsRowData = [
     '<div class="box  GREEN"></div>',
     '<div class="box  GREEN"></div>',
 
-    "https://www.google.com",
+    "https://www.splunk.com",
     "-",
   ],
 ];
