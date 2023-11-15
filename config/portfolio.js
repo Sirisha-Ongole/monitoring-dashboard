@@ -12,26 +12,26 @@ export const portfolioViewNam = [
   },
 
   {
-    name: "Financial Line - 100%",
+    name: "Financial - 100%",
     status: "portfolioGreen",
     value: 100,
   },
-  {
-    name: "Data - 100%",
-    status: "portfolioGreen",
-    value: 100,
-  },
+  // {
+  //   name: "Data - 100%",
+  //   status: "portfolioGreen",
+  //   value: 100,
+  // },
 
   {
     name: "Property - 100%",
     status: "portfolioGreen",
     value: 100,
   },
-  {
-    name: "Common - 100%",
-    status: "portfolioGreen",
-    value: 100,
-  },
+  // {
+  //   name: "Common - 100%",
+  //   status: "portfolioGreen",
+  //   value: 100,
+  // },
 ];
 
 export const portfolioViewApac = [

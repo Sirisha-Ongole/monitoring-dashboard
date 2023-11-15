@@ -50,8 +50,8 @@ export const Header = ({ setIsVisible }) => {
                 justifyContent: "center",
                 backgroundColor: "var(--paynes-gray)",
               }}>
-                <BsCodeSlash />
-                <p className="logoText" style={{margin:"0 1rem"}}>Sirisha</p>
+                {/* <BsCodeSlash />
+                <p className="logoText" style={{margin:"0 1rem"}}>Sirisha</p> */}
               </div>
               <Navbar.Brand
                 href="#home"
@@ -68,10 +68,10 @@ export const Header = ({ setIsVisible }) => {
               </Navbar.Brand>
             </Navbar.Collapse>
             <Nav.Link href="#home" onClick={() => setIsVisible(true)}>
-              GI
+              LoB1
             </Nav.Link>
             <Nav.Link href="#features" onClick={() => setIsVisible(false)}>
-              Corp
+              LoB2
             </Nav.Link>
           </Nav>
         </Container>

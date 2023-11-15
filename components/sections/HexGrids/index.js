@@ -110,21 +110,21 @@ export const HexaGridsSection = ({
             setShowView={setShowInfraView}
           />
         </div>
-        <div className="col-2">
+        {/* <div className="col-2">
           <HexagonGrid
             gridData={appHygeneDataState}
             setShowView={setShowHygieneView}
           />
-        </div>
+        </div> */}
         <div className="col-2">
           <HexagonGrid
             gridData={availabilityDataState}
             setShowView={setShowAvailabilityView}
           />
         </div>
-        <div className="col-2">
+        {/* <div className="col-2">
           <HexagonGrid gridData={mttrDataState} setShowView={setShowMttrView} />
-        </div>
+        </div> */}
       </div>
     </>
   );

@@ -12,10 +12,10 @@ export const LobOverview = () => {
           textAlign: "center",
           // fontWeight: "bold",
         }}
-      >GI Applications Landscape</h5>
+      >Applications Landscape</h5>
       <PieChart
-        series={[600, 100, 200, 200, 100]}
-        cols={["NAM", "LATAM", "Japan", "EMEA", "China"]}
+        series={[600, 100, 200, 200]}
+        cols={["NAM", "LATAM", "APAC", "EMEA"]}
       />
     </div>
   );

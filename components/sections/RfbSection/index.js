@@ -89,13 +89,13 @@ export const RfbSection = ({ rfbRegionSelected }) => {
             showTextGrid={true}
           />
         </div>
-        {showMore && (
+        {true && (
           <div className="col-8">
             <PortfolioSummary2 data={portfolioSummaryData} />
           </div>
         )}
         {/* </div> */}
-        {showMore && (
+        {true && (
           // <div className="row">
           <div className="col-12" style={{ borderRadius: "0.5rem" }}>
             <IncidentView

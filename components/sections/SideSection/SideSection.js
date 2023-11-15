@@ -5,12 +5,23 @@ import { BarChart } from "../../common/charts/BarChart";
 import { BusinessKpi } from "./BusinessKpi";
 
 export const SideSection = () => {
+  const businessFunctions = [
+    "Func 1",
+    "Func 2",
+    "Func 3",
+    "Func 4",
+    "Func 5",
+    "Func 6",
+  ];
   return (
     <>
       <LobOverview />
-      <div className="darkmode-background" style={{
-        borderRadius: "0.5rem",
-      }}>
+      <div
+        className="darkmode-background"
+        style={{
+          borderRadius: "0.5rem",
+        }}
+      >
         <div
           className="sectionBorder"
           style={{
@@ -24,7 +35,7 @@ export const SideSection = () => {
                 className=""
                 data={[100, 150, 200, 100, 50, 80]}
                 title="Active Tickets by Business functions"
-                cols = {["Reservation", "Rating", "Quote", "Bind", "Book", "Issue"]}
+                cols={businessFunctions}
               />
             </div>
           </div>
